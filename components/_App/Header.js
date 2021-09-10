@@ -14,7 +14,7 @@ function Header() {
               src="/static/logo.svg"
               style={{ marginRight: "1em" }}
             />
-            ReactReserve
+            Furnicommerce
           </Menu.Item>
         </Link>
 
