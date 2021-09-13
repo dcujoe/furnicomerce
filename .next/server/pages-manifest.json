@@ -3,8 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/signup": "pages/signup.js",
-  "/cart": "pages/cart.js",
-  "/create": "pages/create.js",
-  "/account": "pages/account.js"
+  "/create": "pages/create.js"
 }
