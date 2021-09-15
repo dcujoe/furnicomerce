@@ -22,8 +22,12 @@ function Home(props) {
 
 Home.getInitialProps = () => {
   //fetch data on server
-  return { hello: 'world' }
+  const url = "http://localhost:3000/api/products";
+    const response = await axios.get(url);
+  return { products: response.data }
+
   // return response data as an object
+  // note: this object will be merged with existing props
 }
 
 
