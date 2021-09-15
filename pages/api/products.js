@@ -1,6 +1,6 @@
 import products from '../../static/products.json'
 
-export default = (req, res) => {
+export default products = (req, res) => {
     res.status(200).json(products);
 
 };
