@@ -1,4 +1,4 @@
-[
+const products = [
   {
     "name": "Bernie Gledhill",
     "price": 1399.02,
@@ -140,3 +140,5 @@
     "mediaUrl": "https://res-3.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/c/i/ci1_lgcoff_gg_frontlow_v2-circula-large-coffee-table-grey-green.jpg"
   }
 ]
+
+export default products;
