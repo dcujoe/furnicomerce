@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     "name": "Bernie Gledhill",
     "price": 1399.02,
@@ -141,4 +141,3 @@ const products = [
   }
 ]
 
-export default products;

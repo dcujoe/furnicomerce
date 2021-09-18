@@ -3,7 +3,7 @@ import connectDB from '../../utils/connectDb'
 
 connectDB()
 
-export default productdata = (req, res) => {
+export default products = (req, res) => {
     res.status(200).json(products);
 
 };
