@@ -1,4 +1,4 @@
-export const products = [
+[
   {
     "name": "Bernie Gledhill",
     "price": 1399.02,
