@@ -1,6 +1,7 @@
 import App from "next/app";
 import Layout from "../components/_App/Layout";
 
+
 class MyApp extends App {
   
   static async getInitialProps({ Component, ctx }) {
@@ -11,6 +12,8 @@ class MyApp extends App {
     }
 
     return { pageProps }
+
+
   }
 
 

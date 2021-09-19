@@ -1,1 +1,1 @@
-## Starting Repo for MERN Stack - The Complete Guide
+## creating an ecommerce application with MERN stack

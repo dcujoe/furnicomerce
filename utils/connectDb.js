@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const connection = {};
 
-async function connectDB() {
+async function connectDb() {
     if (connection.isConnected) {
         //checking if the database is connected 
         console.log("Using existing connection")
@@ -24,4 +24,4 @@ async function connectDB() {
 
 // this whole process is used when connecting mongo DB application with a serverless application like AWS lambda
 
-export default connectDB;
+export default connectDb;
