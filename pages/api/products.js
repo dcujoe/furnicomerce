@@ -1,7 +1,7 @@
 import products from '../../static/products.json';
-import connectDB from '../../utils/connectDb'
+import connectDb from '../../utils/connectDb'
 
-connectDB()
+connectDb()
 
 export default (req, res) => {
     res.status(200).json(products);
