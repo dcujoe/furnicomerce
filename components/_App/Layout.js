@@ -4,7 +4,8 @@ import { Container } from "semantic-ui-react";
 import Header from "./Header";
 import HeadContent from "./HeadContent";
 
-function Layout({ children }) {
+
+const Layout = ({ children }) => {
   return (
     <>
       <Head>
