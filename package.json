@@ -29,5 +29,8 @@
     "stripe": "^7.5.0",
     "uuid": "^3.4.0",
     "validator": "^11.1.0"
+  },
+  "devDependencies": {
+    "mongo-import": "^0.0.2"
   }
 }
