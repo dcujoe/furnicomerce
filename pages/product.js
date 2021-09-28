@@ -8,6 +8,7 @@ function Product({ product }) {
     <>
     <ProductSummary {...product} />
     <ProductAttributes {...product} />
+    
 
     </>
   )
