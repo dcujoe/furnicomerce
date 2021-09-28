@@ -4,11 +4,11 @@ import Layout from "../components/_App/Layout";
 
 class MyApp extends App {
   
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({ getDerivedStateFromProps, ctx }) {
     let pageProps = {};
 
-    if(Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
+    if(getDerivedStateFromProps) {
+      pageProps = await getDerivedStateFromProps.getInitialProps(ctx)
     }
 
     return { pageProps }
@@ -18,12 +18,12 @@ class MyApp extends App {
 
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { getDerivedStateFromProps, pageProps } = this.props;
     return (
       
       <Layout>
       
-        <Component {...pageProps} />
+        <getDerivedStateFromProps {...pageProps} />
       
       </Layout>
       
