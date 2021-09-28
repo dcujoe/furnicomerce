@@ -4,32 +4,27 @@ import Layout from "../components/_App/Layout";
 
 
 class MyApp extends App {
-  
-  static async getInitialProps({ getDerivedStateFromProps, ctx }) {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
-    if(getDerivedStateFromProps) {
-      pageProps = await getDerivedStateFromProps.getInitialProps(ctx)
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
     }
 
     return { pageProps }
-
-
   }
-
-
+  
   render() {
-    const { getDerivedStateFromProps, pageProps } = this.props;
+    const { Component, pageProps } = this.props;
     return (
-      
       <Layout>
-      
-        <getDerivedStateFromProps {...pageProps} />
-      
+        <Component {...pageProps} />
       </Layout>
-      
-    );
+    )
   }
+
 }
+
+
 
 export default MyApp;

@@ -1,12 +1,5 @@
-// importing product models from mongoose created product model to manipulate all data
-import Product from '../../models/Product'
-import connectDb from '../../utils/connectDb'
+import products from '../../static/products.json'
 
-connectDb()
-
-export default async (req, res) => {
-    //.find method is used to return a return function that can be used with await
-    const products = await Product.find()
-
+export default (req, res) => { 
     res.status(200).json(products);
-};
+}
