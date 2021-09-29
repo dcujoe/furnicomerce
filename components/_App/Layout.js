@@ -5,7 +5,7 @@ import Header from "./Header";
 import HeadContent from "./HeadContent";
 
 
-function Layout({ children }) {
+function Layout ({ children }) {
   return (
     <>
       <Head>

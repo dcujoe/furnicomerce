@@ -38,4 +38,5 @@ const ProductSchema = new mongoose.Schema({
 
 //This is to make sure that the model has not been already generated
 // mongoose.models.Product is to check if product models are already avaialable
-export default mongoose.models.Product || mongoose.model("Product", ProductSchema)
+export default mongoose.models.Product || 
+mongoose.model("Product", ProductSchema)

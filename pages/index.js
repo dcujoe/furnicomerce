@@ -3,15 +3,15 @@ import axios from "axios"
 
 
 
-function Home(products) {
-  console.log(products)
+function Home({products}) {
+  console.log(products);
  //React.useEffect(() => { 
-  // getProducts()
+  //getProducts()
  //}, [])
 
   //async function getProducts() {
 
-    // fetch data from server
+    //fetch data from server
     //const url = "http://localhost:3000/api/products";
     //const response = await axios.get(url);
     //console.log(response.data)
@@ -20,12 +20,12 @@ function Home(products) {
 
   // return response data as an object
   // note: this object will be merged with existing props
-  return <>Home</>
+  return <>home</>
 
 }
 
 Home.getInitialProps = async () => {
-  // fetch datas on server
+  // fetch data from server
   // return response data as an object
     const url = "http://localhost:3000/api/products";
     const response = await axios.get(url);
