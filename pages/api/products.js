@@ -1,8 +1,7 @@
 import Product from '../../models/Product';
 //import products from '../../static/products.json'
 // change fetching data from static products.json to remote mongoDB server
-import connectDb from '../../utils/connectDb';
-
+import connectDb from "../../utils/connectDb";
 
 connectDb();
 
