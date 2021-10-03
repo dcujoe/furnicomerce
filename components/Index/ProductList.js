@@ -7,16 +7,18 @@ function ProductList({ products }) {
     return products.map(product => ({
       header: product.name,
       image: product.mediaUrl,
-      meta: `$${product.price}`,
+      meta: `€${product.price}`,
       color: 'teal',
       fluid: true,
       childKey: product._id,
       href: `/product?_id=${product._id}`
-    }))
+    }));
     
   }
   // items to be represented per row (CSS) and items should be centered
-  return <Card.Group itemsPerRow="3" centered items=
+  return <Card.Group 
+         stackable 
+         itemsPerRow="3" centered items=
   {mapProductsToItems(products)} />
   
 }
