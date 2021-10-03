@@ -3,9 +3,10 @@ import { Container } from "semantic-ui-react";
 
 import Header from "./Header";
 import HeadContent from "./HeadContent";
+import ProductList from "../../components/Index/ProductList"
 
 
-function Layout ({ children }) {
+export default function Layout ({ children }) {
   return (
     <>
       <Head>
@@ -21,10 +22,11 @@ function Layout ({ children }) {
       </Head>
       <Header />
       <Container text style={{ paddingTop: "1em" }}>
+        
         {children}
       </Container>
     </>
   );
 }
 
-export default Layout;
+

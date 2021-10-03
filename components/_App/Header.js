@@ -8,7 +8,7 @@ Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
 
-function Header() {
+export default function Header() {
   const router = useRouter();
   const user = true;
 
@@ -83,4 +83,3 @@ function Header() {
   );
 }
 
-export default Header;
