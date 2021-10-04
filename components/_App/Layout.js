@@ -24,6 +24,7 @@ export default function Layout ({ children }) {
       <Container text style={{ paddingTop: "1em" }}>
         
         {children}
+        
       </Container>
     </>
   );

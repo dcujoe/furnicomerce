@@ -4,7 +4,7 @@ import { Card } from 'semantic-ui-react'
 
 function ProductList({ products }) {
   function mapProductsToItems(products) {
-    return products.map(product => ({
+    return products.map((product) => ({
       header: product.name,
       image: product.mediaUrl,
       meta: `€${product.price}`,
