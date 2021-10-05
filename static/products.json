@@ -67,35 +67,35 @@
      "price":1299.53,
      "description":"Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
      "sku":"737-21-7041",
-     "mediaUrl":"https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/w/r/wr1_twwood_wl_front-woodrow-twin-walnut_1.jpg"
+     "mediaUrl":"/static/images/img10.jpeg"
   },
   {
      "name":"Noella Ruddom",
      "price":999.21,
      "description":"Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
      "sku":"195-11-7465",
-     "mediaUrl":"https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/m/o/modu-licious_4_-_modern_dresser_storage_4.jpg"
+     "mediaUrl":"/static/images/img11.jpeg"
   },
   {
      "name":"Kirstyn Espadate",
      "price":99.57,
      "description":"Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
      "sku":"892-41-1075",
-     "mediaUrl":"https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/d/k/dk1_lmbrpl_og_front.jpg"
+     "mediaUrl":"/static/images/img12.jpeg"
   },
   {
      "name":"Rourke Greet",
      "price":749.29,
      "description":"Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
      "sku":"318-91-5587",
-     "mediaUrl":"https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/n/s/ns1_lnchbk_dk_new-standard-lounge-chair-nixon-dusk-black.jpg"
+     "mediaUrl":"/static/images/img13.jpeg"
   },
   {
      "name":"Scarlet Rosemallow",
      "price":399.57,
      "description":"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
      "sku":"350-64-1431",
-     "mediaUrl":"https://res-4.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/h/o/hotel-modern-rug-navy-black_1.jpg"
+     "mediaUrl":"/static/images/img14.jpeg"
   },
   {
      "name":"Arden Stockbridge",
