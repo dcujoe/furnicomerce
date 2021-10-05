@@ -28,7 +28,7 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: true
     }, 
-    mediaUrl: {
+    image: {
         type: String,
         required: true
     },

@@ -6,7 +6,7 @@ function ProductList({ products }) {
   function mapProductsToItems(products) {
     return products.map((product) => ({
       header: product.name,
-      image: product.mediaUrl,
+      image: product.image,
       meta: `€${product.price}`,
       color: 'teal',
       fluid: true,
