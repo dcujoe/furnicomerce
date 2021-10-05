@@ -4,7 +4,7 @@ import ProductList from '../components/Index/ProductList'
 
 
 
-function Home({products}) {
+function Home({ products }) {
  
  
   return <ProductList products={products} />

@@ -1,4 +1,4 @@
-const products = [
+[
    {
       "name":"Bernie Gledhill",
       "price":1399.02,
@@ -133,5 +133,3 @@ const products = [
       "image":"/static/images/img19.jpeg"
    }
 ]
-
-export default products;

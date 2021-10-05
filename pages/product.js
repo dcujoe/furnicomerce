@@ -4,7 +4,7 @@ import ProductAttributes from '../components/Product/ProductAttributes'
 
 
 function Product({ product }) {
-  
+
   return (
       <>
       <ProductSummary {...product} />
