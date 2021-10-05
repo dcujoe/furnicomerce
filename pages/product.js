@@ -4,11 +4,13 @@ import ProductAttributes from '../components/Product/ProductAttributes'
 
 
 function Product({ product }) {
-  return 
-    console.log({ product })
-    return <>
-    product</>
   
+  return (
+      <>
+      <ProductSummary {...product} />
+      <ProductAttributes {...product} />
+      </>
+    )
 }
 
 Product.getInitialProps = async ({ query : { _id } }) => {
