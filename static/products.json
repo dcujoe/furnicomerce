@@ -42,32 +42,25 @@
      "mediaUrl":"/static/images/img6.jpg"
   },
   {
-     "name":"Bartolemo Peckitt",
-     "price":449.39,
-     "description":"Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus.",
-     "sku":"204-74-3402",
-     "mediaUrl":"https://res-4.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/s/r/sr1_sidtbl_sk_front_strut-side-table-smoke_3.jpg"
-  },
-  {
      "name":"Kathye Haith",
      "price":199.93,
      "description":"In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.",
      "sku":"150-37-2137",
-     "mediaUrl":"https://res-3.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/r/o/rook_modern_table_lamp.jpg"
+     "mediaUrl":"/static/images/img7.jepg"
   },
   {
      "name":"Armin Basilio",
      "price":2299.01,
      "description":"Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
      "sku":"306-80-4996",
-     "mediaUrl":"https://res-3.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/n/y/ny1_narmsf_ln_frontlow-9-yard-armless-sofa-sunbrella-linen.jpg"
+     "mediaUrl":"/static/images/img8.jpeg"
   },
   {
      "name":"Cal Sterman",
      "price":299.23,
      "description":"In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
      "sku":"726-81-7094",
-     "mediaUrl":"https://res-4.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/b/p/bp1_smlpen_ox-bobber-small-pendant-oxblood.jpg"
+     "mediaUrl":"/static/images/img9.png"
   },
   {
      "name":"Ardine Imlaw",
