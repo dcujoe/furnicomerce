@@ -1,4 +1,4 @@
-[
+const products = [
    {
       "name":"Bernie Gledhill",
       "price":1399.02,
@@ -133,3 +133,5 @@
       "image":"/static/images/img19.jpeg"
    }
 ]
+
+export default products;
