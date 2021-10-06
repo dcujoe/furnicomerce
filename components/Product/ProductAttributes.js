@@ -14,7 +14,7 @@ function ProductAttributes({ description, _id }) {
     const payload = { params: { _id } }
     await axios.delete(url, payload)
 
-
+    router.push('/');
   }
 
 
