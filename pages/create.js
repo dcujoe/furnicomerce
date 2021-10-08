@@ -12,9 +12,15 @@ function CreateProduct() {
 
 
   function handleChange(event) {
-    const { name, value } = event.target
-    setProduct((prevState) => ({ [name]: value }))
-    console.log(product);
+    const { name, value, files } = event.target;
+    if (name === 'media') {
+      setProduct(prevState => ({ ...prevState, media: files[0]}
+        ))
+    } else {
+      setProduct((prevState) => ({ ...prevState, [name]: value }))
+   
+    }
+    
   }
 
 
