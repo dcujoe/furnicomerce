@@ -15,7 +15,8 @@ import { Form, Input, TextArea, Button, Image, Message,
 function CreateProduct() {
   const [product, setProduct] = React.useState(INITIAL_PRODUCT);
 
-  const [mediaPreview, setMediaPreview] = React.useState('')
+  const [mediaPreview, setMediaPreview] = React.useState('');
+  const [success, setSuccess] = React.useState(false);
   
 
 
@@ -36,9 +37,9 @@ function CreateProduct() {
 
     // this prevents the default settings happening when event is submitted
     event.preventDefault();
-
     console.log(product);
     setProduct(INITIAL_PRODUCT);
+    setSuccess(true);
   }
 
 
@@ -50,7 +51,7 @@ function CreateProduct() {
       <Icon name="add" color="orange"/>
       Create New Product
     </Header>
-    <Form success={true} onSubmit={handleSubmit}>
+    <Form success={success} onSubmit={handleSubmit}>
       <Message 
       success
       icon="check"
@@ -97,6 +98,7 @@ function CreateProduct() {
         label="Description"
         value={product.description}
         placeholder="Description"
+        onChange={handleChange}
       />
       <Form.Field
         control={Button} 
