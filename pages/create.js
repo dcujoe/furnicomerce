@@ -1,6 +1,8 @@
 import { Form, Input, TextArea, Button, Image, Message, 
   Header, Icon } from 'semantic-ui-react'
   import React, { useState } from 'react'
+  import axios from 'axios'
+  import baseUrl from '../utils/baseUrl'
 
 
   const INITIAL_PRODUCT = {
@@ -33,11 +35,30 @@ function CreateProduct() {
     
   }
 
-  function handleSubmit(event) {
+// setting a function to upload data and making a post request to the remote server
+  async function handleImageUpload() {
+    const data = new FormData();
+
+    data.append('file', product.media)
+    data.append('upload_preset', 'furnicommerce')
+    data.append('clould_name', 'dauy2gohl')
+
+    // made the post request using the API key from cloudinary.com 
+    // API key for cloudinary is contained in the next.config.js file
+
+    const response = await axios.post
+    (process.env.CLOUDINARY_URL, data)
+    const mediaUrl = response.data.url
+    return mediaUrl;
+
+  }
+
+
+  async function handleSubmit(event) {
 
     // this prevents the default settings happening when event is submitted
     event.preventDefault();
-    console.log(product);
+    const mediaUrl = await handleImageUpload();
     setProduct(INITIAL_PRODUCT);
     setSuccess(true);
   }
