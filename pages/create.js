@@ -2,13 +2,21 @@ import { Form, Input, TextArea, Button, Image, Message,
   Header, Icon } from 'semantic-ui-react'
   import React, { useState } from 'react'
 
-function CreateProduct() {
-  const [product, setProduct] = React.useState({
+
+  const INITIAL_PRODUCT = {
     name: "",
     price: "",
     media: '',
     description: ""
-  })
+  }
+
+
+
+function CreateProduct() {
+  const [product, setProduct] = React.useState(INITIAL_PRODUCT);
+
+  const [mediaPreview, setMediaPreview] = React.useState('')
+  
 
 
   function handleChange(event) {
@@ -16,11 +24,21 @@ function CreateProduct() {
     if (name === 'media') {
       setProduct(prevState => ({ ...prevState, media: files[0]}
         ))
+        setMediaPreview(window.URL.createObjectURL(files[0]))
     } else {
       setProduct((prevState) => ({ ...prevState, [name]: value }))
    
     }
     
+  }
+
+  function handleSubmit(event) {
+
+
+
+
+    // this prevents the default settings happening when event is submitted
+    event.preventDefault();
   }
 
 
@@ -32,13 +50,14 @@ function CreateProduct() {
       <Icon name="add" color="orange"/>
       Create New Product
     </Header>
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Form.Group widths="equal">
         <Form.Field
         control={Input} 
         name="name" 
         label="Name"
         placeholder="Name"
+        value={product.name}
         onChange={handleChange}
         />
         <Form.Field
@@ -49,6 +68,7 @@ function CreateProduct() {
         min="0.00"
         step="0.01"
         type="number"
+        value={product.price}
         onChange={handleChange}
         />
         <Form.Field
@@ -64,10 +84,12 @@ function CreateProduct() {
 
         
       </Form.Group>
+      <Image src={mediaPreview} rounded centered size="small" />
       <Form.Field
         control={TextArea} 
         name="description"
         label="Description"
+        value={product.description}
         placeholder="Description"
       />
       <Form.Field
