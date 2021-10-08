@@ -1,7 +1,25 @@
 import { Form, Input, TextArea, Button, Image, Message, 
   Header, Icon } from 'semantic-ui-react'
+  import React, { useState } from 'react'
 
 function CreateProduct() {
+  const [product, setProduct] = React.useState({
+    name: "",
+    price: "",
+    media: '',
+    description: ""
+  })
+
+
+  function handleChange(event) {
+    const { name, value } = event.target
+    setProduct((prevState) => ({ [name]: value }))
+    console.log(product);
+  }
+
+
+
+
   return (
     <>
     <Header as="h2" block>
@@ -14,7 +32,9 @@ function CreateProduct() {
         control={Input} 
         name="name" 
         label="Name"
-        placeholder="Name"/>
+        placeholder="Name"
+        onChange={handleChange}
+        />
         <Form.Field
         control={Input} 
         name="price" 
@@ -22,14 +42,18 @@ function CreateProduct() {
         placeholder="Price"
         min="0.00"
         step="0.01"
-        type="number"/>
+        type="number"
+        onChange={handleChange}
+        />
         <Form.Field
         control={Input} 
         name="media" 
         type="file"
         label="Media"
         accept="image/*"
-        content="Select Image"/>
+        content="Select Image"
+        onChange={handleChange}
+        />
 
 
         
