@@ -34,11 +34,11 @@ function CreateProduct() {
 
   function handleSubmit(event) {
 
-
-
-
     // this prevents the default settings happening when event is submitted
     event.preventDefault();
+
+    console.log(product);
+    setProduct(INITIAL_PRODUCT);
   }
 
 
@@ -50,7 +50,13 @@ function CreateProduct() {
       <Icon name="add" color="orange"/>
       Create New Product
     </Header>
-    <Form onSubmit={handleSubmit}>
+    <Form success={true} onSubmit={handleSubmit}>
+      <Message 
+      success
+      icon="check"
+      header="Success"
+      content="Your product has been posted"
+      />
       <Form.Group widths="equal">
         <Form.Field
         control={Input} 
