@@ -5,6 +5,9 @@ export default async (req, res) => {
         case "GET":
             await handleGetRequest(req, res);
             break;
+        case "POST":
+            await handlePostRequest(req, res);
+            break;
         case "DELETE":
             await handleDeleteRequest(req, res);
             break;
@@ -21,6 +24,20 @@ async function handleGetRequest(req, res) {
   res.status(200).json(product);
 }
 
+async function handlePostRequest(req, res) {
+    const { name, price, description, mediaUrl } = req.body
+
+    if (!name || !price || !description || !mediaUrl) {
+        return res.status(422).send("Product missing one or more fields")
+    } 
+        const product = new Product({ name, price, description, mediaUrl}).save()
+        res.status(201).json(product)
+    
+
+    
+
+}
+
 async function handleDeleteRequest(req, res) {
     const { _id } = req.query;
     await Product.findOneAndDelete({ _id });
@@ -28,6 +45,8 @@ async function handleDeleteRequest(req, res) {
     res.status(204).json({});
 
 }
+
+
 
 // functions for get & delete requests GET -> handleGetRequest DELETE -> handleDeleteRequest
 
