@@ -5,6 +5,7 @@ import { Form, Input, TextArea, Button, Image, Message,
   import baseUrl from '../utils/baseUrl'
 
 
+
   const INITIAL_PRODUCT = {
     name: "",
     price: "",
@@ -59,6 +60,9 @@ function CreateProduct() {
     // this prevents the default settings happening when event is submitted
     event.preventDefault();
     const mediaUrl = await handleImageUpload();
+    const url = `${baseUrl}/api/product`
+    const { name, price, description } = product
+    const payload = { name, price, description, mediaUrl }
     setProduct(INITIAL_PRODUCT);
     setSuccess(true);
   }
