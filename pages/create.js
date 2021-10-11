@@ -1,8 +1,9 @@
 import { Form, Input, TextArea, Button, Image, Message, 
   Header, Icon } from 'semantic-ui-react'
-  import React, { useState } from 'react'
+  import React, { useState, useEffect } from 'react'
   import axios from 'axios'
   import baseUrl from '../utils/baseUrl'
+  import catchErrors from '../utils/catchErrors'
 
 
 
@@ -17,11 +18,11 @@ import { Form, Input, TextArea, Button, Image, Message,
 
 function CreateProduct() {
   const [product, setProduct] = React.useState(INITIAL_PRODUCT);
-
   const [mediaPreview, setMediaPreview] = React.useState('');
   const [success, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
+  const [error, setError] = React.useState('');
 
 
   React.useEffect(() => {
@@ -76,7 +77,7 @@ function CreateProduct() {
     console.log({ mediaUrl });
     const url = `${baseUrl}/api/product`
     const { name, price, description } = product
-    const payload = { name, price, description, mediaUrl };
+    const payload = { name: "", price, description, mediaUrl };
     const response = await axios.post(url, payload);
     console.log({response})
     
@@ -84,7 +85,7 @@ function CreateProduct() {
     setSuccess(true);
 
     } catch(error) {
-      catchErrors(error)
+      catchErrors(error, setError);
       
     } finally {
       setLoading(false);
@@ -102,7 +103,12 @@ function CreateProduct() {
       <Icon name="add" color="orange"/>
       Create New Product
     </Header>
-    <Form loading={loading} success={success} onSubmit={handleSubmit}>
+    <Form loading={loading} error={Boolean(error)} success={success} onSubmit={handleSubmit}>
+      <Message 
+      error
+      header="Oops!"
+      content={error}
+      />
       <Message 
       success
       icon="check"

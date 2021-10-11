@@ -5,17 +5,26 @@ function catchErrors(error, displayError) {
         // that is not in the range of 2XX
 
         errorMsg = error.response.data;
-        console.log("Error response", errorMsg);
+        console.error("Error response", errorMsg);
+
+        // For Cloudinary image uploads, 
+        if (error.response.data.error) {
+            errorMsg = error.response.data.error.message
+
+            
+        }
     } else if (error.request) {
         // the request was made, but no response was received
 
         errorMsg = error.request;
-        console.log("Error request", errorMsg)
+        console.error("Error request", errorMsg)
     } else {
         // something else happened in making the request that triggered an error
         errorMsg = error.message;
-        console.log("Error message", errorMsg);
+        console.error("Error message", errorMsg);
     }
 
     displayError(errorMsg)
 }
+
+export default catchErrors;
