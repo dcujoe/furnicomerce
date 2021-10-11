@@ -21,6 +21,16 @@ function CreateProduct() {
   const [mediaPreview, setMediaPreview] = React.useState('');
   const [success, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
+  const [disabled, setDisabled] = React.useState(true);
+
+
+  React.useEffect(() => {
+
+// this effect disables the submit button till the values in the product are fully filled
+   const isProduct = Object.values(product).every(el => Boolean(el))
+
+   isProduct ? setDisabled(false) : setDisabled(true);
+  }, [product])
   
 
 
@@ -57,8 +67,9 @@ function CreateProduct() {
 
 
   async function handleSubmit(event) {
-
-    // this prevents the default settings happening when event is submitted
+    // try catch method used to catch errors that happen when code is not loaded
+    try {
+      // this prevents the default settings happening when event is submitted
     event.preventDefault();
     setLoading(true);
     const mediaUrl = await handleImageUpload();
@@ -68,9 +79,18 @@ function CreateProduct() {
     const payload = { name, price, description, mediaUrl };
     const response = await axios.post(url, payload);
     console.log({response})
-    setLoading(false);
+    
     setProduct(INITIAL_PRODUCT);
     setSuccess(true);
+
+    } catch(error) {
+      catchErrors(error)
+      
+    } finally {
+      setLoading(false);
+    }
+
+    
   }
 
 
@@ -133,7 +153,7 @@ function CreateProduct() {
       />
       <Form.Field
         control={Button} 
-        disabled={loading}
+        disabled={disabled || loading}
         color="blue"
         icon="pencil alternate"
         content="Submit"

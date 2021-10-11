@@ -10,7 +10,7 @@ function AddProductToCart() {
   action={{ 
     color: 'orange',
     content: "Add to Cart",
-    icon="plus cart"
+    icon: "plus cart"
   }}
 />
 );
