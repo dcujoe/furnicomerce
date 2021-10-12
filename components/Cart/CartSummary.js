@@ -12,7 +12,6 @@ function CartSummary() {
       floated="right"
       content="Checkout"
       />
-        
     </Segment>
     </>
   )
