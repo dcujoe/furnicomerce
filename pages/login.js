@@ -29,16 +29,8 @@ function Signup() {
   }
 
 
-  // created handleAccount function to push when login is done
-  async function handleAccount(event) {
-    event.preventDefault()
+ 
 
-    const newUrl = `${baseUrl}/api/account`
-    const payload = { ...user }
-    const response = await axios.push(newUrl)
-    handleLogin(response.data)
-
-  }
 
 
   async function handleSubmit(event) {
@@ -104,7 +96,6 @@ function Signup() {
         type="submit"
         color="orange"
         content="Login"
-        onChange={handleAccount}
         />
 
 

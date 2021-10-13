@@ -29,19 +29,20 @@ export default async (req, res) => {
             email, 
             password: hash
         }).save()
+
         console.log({newUser})
 
        // 4. Create token for new user. 
        // The jsonwebtoken is signed in within a specific period of time using ExpiresIn function
        // 7d means token cannot be used after 7 days
-       const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET, { ExpiresIn: '7d'})
+       const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET, { ExpiresIn: '7d' })
        
        
        // 5. Send back token
        res.status(201).json(token) 
 
     } catch (error) {
-        console.error
+        console.error(error)
         res.status(500).send("Error signup user. Please try again later")
     } 
 

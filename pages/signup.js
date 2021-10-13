@@ -42,16 +42,16 @@ function Signup() {
     try {
       // make a request to signup user
       setLoading(true)
-      setError('')
+      setError("")
       const url = `${baseUrl}/api/signup`
       const payload = { ...user }
       const response = await axios.post(url, payload)
       handleLogin(response.data)
 
     } catch (error) {
-      catchErrors(error, setError)
+      catchErrors(error, setError);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   }
 
