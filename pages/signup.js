@@ -2,6 +2,9 @@ import React from 'react'
 import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react'
 import Link from 'next/link'
 import catchErrors from '../utils/catchErrors'
+import axios from 'axios'
+import baseUrl from '../utils/baseUrl'
+import { handleLogin } from '../utils/auth'
 
 
 const INITIAL_USER = {
@@ -26,15 +29,24 @@ function Signup() {
   function handleChange(event) {
     const { name, value } = event.target
    setUser(prevState => ({ ...prevState, [name]: value }));
+   
   
   }
 
-  function handleSubmit() {
+
+  async function handleSubmit(event) {
+
+    event.preventDefault()
+
+
     try {
       // make a request to signup user
       setLoading(true)
       setError('')
-      console.log(product)
+      const url = `${baseUrl}/api/signup`
+      const payload = { ...user }
+      const response = await axios.post(url, payload)
+      handleLogin(response.data)
 
     } catch (error) {
       catchErrors(error, setError)
@@ -97,6 +109,7 @@ function Signup() {
         type="submit"
         color="orange"
         content="Signup"
+        onChange={handleChange}
         />
 
 
