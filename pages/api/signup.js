@@ -1,5 +1,6 @@
 import connectDb from '../../utils/connectDb'
 import User from '../../models/User'
+import Cart from '../../models/Cart'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import isEmail from 'validator/lib/isEmail'
@@ -33,22 +34,24 @@ export default async (req, res) => {
        const hash = await bcrypt.hash(password, 10)
 
         // 4. Create user 
-
         const newUser = await new User({
             name, 
             email, 
             password: hash
-        }).save()
+        }).save();
 
-        console.log({newUser})
+        console.log({newUser});
 
-       // 5. Create token for new user. 
+        // 5. Create a cart for a new user
+        await new Cart({ user: newUser._id }).save();
+
+       // 6. Create token for new user. 
        // The jsonwebtoken is signed in within a specific period of time using ExpiresIn function
        // 7d means token cannot be used after 7 days
        const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET, { ExpiresIn: '7d' })
        
        
-       // 6. Send back token
+       // 7. Send back token
        res.status(201).json(token) 
 
     } catch (error) {

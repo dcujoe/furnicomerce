@@ -31,10 +31,6 @@ function Signup() {
   }
 
 
- 
-
-
-
   async function handleSubmit(event) {
 
     event.preventDefault()
