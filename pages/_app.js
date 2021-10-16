@@ -4,7 +4,7 @@ import { parseCookies, destroyCookie } from 'nookies'
 import { redirectUser } from '../utils/auth'
 import baseUrl from '../utils/baseUrl'
 import axios from "axios";
-
+import { Router } from "next/router";
 
 
 
@@ -14,14 +14,18 @@ class MyApp extends App {
 
 
     let pageProps = {};
-    
 
   
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx)
     }
 
-    if (!token) {
+
+    
+
+
+
+  if (!token) {
       // if the tocken used is protected(admin) we direct it to create
       const isProtectedRoute = ctx.pathname === '/account' || ctx.pathname === '/create'
 
@@ -29,19 +33,19 @@ class MyApp extends App {
         redirectUser(ctx, '/login')
       } else {
         try {
-          const payload = { headers: { Authorization: token } }
-          const url = `${baseUrl}/api/account`
-          const response = await axios.get(url, payload)
-          const user = response.data
-          const isRoot = user.role === 'root' 
-          const isAdmin = user.role === 'admin'
+          const payload = { headers: { Authorization: token } };
+          const url = `${baseUrl}/api/account`;
+          const response = await axios.get(url, payload);
+          const user = response.data;
+          const isRoot = user.role === 'root' ;
+          const isAdmin = user.role === 'admin';
 
           // if authenticated, but not of role 'admin' or 'root', redirect from 'create' page
-          const isNotPermitted = !(isRoot || isAdmin) && ctx.pathname === '/create'
+          const isNotPermitted = 
+          !(isRoot || isAdmin) && ctx.pathname === '/create';
           if (isNotPermitted) {
-            redirectUser(ctx, '/')
+            redirectUser(ctx, '/');
           }
-
         pageProps.user = user;
         } catch (error) {
           console.error("Error getting current user", error);
@@ -51,10 +55,27 @@ class MyApp extends App {
           redirectUser(ctx, '/login')
         }
       }
-    }
+    } 
 
-    return { pageProps }
+    return { pageProps };
   }
+
+
+  componentDidMount() {
+    window.addEventListener('Storage', this.syncLogout)
+  }
+
+
+  syncLogout = event => {
+    if (event.key === 'logout') {
+      Router.push('/login')
+    }
+  }
+
+
+
+
+
   
   render() {
     const { Component, pageProps } = this.props;
@@ -62,7 +83,7 @@ class MyApp extends App {
       <Layout {...pageProps}>
         <Component {...pageProps} />
       </Layout>
-    )
+    );
   }
 
 }

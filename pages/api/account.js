@@ -9,13 +9,15 @@ connectDb();
 export default async (req, res) => {
     
     if (!("authorization" in req.headers)) {
-        return res.status(401).send("No authorization token")
+        return res.status(401).send("No authorization token");
     }
 
     try {
-        const { userId } = jwt.verify(req.headers.authorization, 
-            process.env.JWT_SECRET)
-        const user = await User.findOne({ _id: userId })
+        const { userId } = jwt.verify(
+            req.headers.authorization, 
+            process.env.JWT_SECRET
+            );
+        const user = await User.findOne({ _id: userId });
         if (user) {
             res.status(200).join(user)
         } else {
