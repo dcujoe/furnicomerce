@@ -22,6 +22,7 @@ class MyApp extends App {
     }
 
     if (!token) {
+      // if the tocken used is protected(admin) we direct it to create
       const isProtectedRoute = ctx.pathname === '/account' || ctx.pathname === '/create'
 
       if (isProtectedRoute) {
