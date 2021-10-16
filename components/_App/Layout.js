@@ -6,7 +6,7 @@ import HeadContent from "./HeadContent";
 import ProductList from "../../components/Index/ProductList"
 
 
-export default function Layout ({ children }) {
+export default function Layout ({ children, user }) {
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ export default function Layout ({ children }) {
         />
         <title>Furnicommerce</title>
       </Head>
-      <Header />
+      <Header user={user} />
       <Container text style={{ paddingTop: "1em" }}>
         
         {children}

@@ -47,8 +47,9 @@ export default async (req, res) => {
 
        // 6. Create token for new user. 
        // The jsonwebtoken is signed in within a specific period of time using ExpiresIn function
-       // 7d means token cannot be used after 7 days
-       const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET, { ExpiresIn: '7d' })
+       // 7. means token cannot be used after 7 days
+       const token = jwt.sign({ userId: newUser._id }, 
+        process.env.JWT_SECRET, { ExpiresIn: '7d' });
        
        
        // 7. Send back token

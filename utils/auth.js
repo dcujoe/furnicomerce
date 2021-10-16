@@ -9,6 +9,11 @@ Router.push('/account')
 
 }
 
-export function redirectUser(ctx, user) {
-
+export function redirectUser(ctx, location) {
+    if (ctx.req) {
+        ctx.res.writeHead(302, { location: location })
+        ctx.res.end();
+    } else {
+        Router.push(location)
+    }
 }
