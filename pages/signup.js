@@ -1,52 +1,49 @@
-import React from 'react'
-import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react'
-import Link from 'next/link'
-import catchErrors from '../utils/catchErrors'
-import axios from 'axios'
-import baseUrl from '../utils/baseUrl'
-import { handleLogin } from '../utils/auth'
+import React from 'react';
+import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react';
+import Link from 'next/link';
+import catchErrors from '../utils/catchErrors';
+import axios from 'axios';
+import baseUrl from '../utils/baseUrl';
+import { handleLogin } from '../utils/auth';
 
 
 const INITIAL_USER = {
   name: "",
   email: "",
   password: ""
-}
+};
 
 
 function Signup() {
-  const [user, setUser] = React.useState(INITIAL_USER)
-  const [disabled, setDisabled] = React.useState(true)
-  const [loading, setLoading] = React.useState(false)
-  const [error, setError] = React.useState('')
+  const [user, setUser] = React.useState(INITIAL_USER);
+  const [disabled, setDisabled] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState('');
 
   React.useEffect(() => {
     // disables the submit form if the user information is not entered
-    const isUser = Object.values(user).every(el => Boolean(el))
-    isUser ? setDisabled(false) : setDisabled(true)
-  }, [user])
+    const isUser = Object.values(user).every(el => Boolean(el));
+    isUser ? setDisabled(false) : setDisabled(true);
+  }, [user]);
 
   function handleChange(event) {
-    const { name, value } = event.target
+    const { name, value } = event.target;
    setUser(prevState => ({ ...prevState, [name]: value }));
-   
-  
   }
 
 
   async function handleSubmit(event) {
-
     event.preventDefault()
 
 
     try {
       // make a request to signup user
-      setLoading(true)
-      setError("")
-      const url = `${baseUrl}/api/signup`
-      const payload = { ...user }
-      const response = await axios.post(url, payload)
-      handleLogin(response.data)
+      setLoading(true);
+      setError("");
+      const url = `${baseUrl}/api/signup`;
+      const payload = { ...user };
+      const response = await axios.post(url, payload);
+      handleLogin(response.data);
 
     } catch (error) {
       catchErrors(error, setError);
@@ -56,7 +53,8 @@ function Signup() {
   }
 
 
-  return <>
+  return (
+  <>
   <Message 
    attached
    icon="settings"
@@ -122,7 +120,9 @@ function Signup() {
   <a>Log in here </a>
 </Link> {" "} instead
   </Message>
-  </>;
+  </>
+  );
 }
+
 
 export default Signup;

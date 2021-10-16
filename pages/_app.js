@@ -12,26 +12,21 @@ class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     const { token } = parseCookies(ctx)
 
-
     let pageProps = {};
 
-  
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx)
     }
 
 
-    
-
-
-
   if (!token) {
       // if the tocken used is protected(admin) we direct it to create
-      const isProtectedRoute = ctx.pathname === '/account' || ctx.pathname === '/create'
-
+      const isProtectedRoute = 
+      ctx.pathname === '/account' || ctx.pathname === '/create';
       if (isProtectedRoute) {
-        redirectUser(ctx, '/login')
-      } else {
+        redirectUser(ctx, '/login');
+      } 
+    } else {
         try {
           const payload = { headers: { Authorization: token } };
           const url = `${baseUrl}/api/account`;
@@ -50,11 +45,11 @@ class MyApp extends App {
         } catch (error) {
           console.error("Error getting current user", error);
           // 1. Throw out invalid token
-          destroyCookie(ctx, "token")
+          destroyCookie(ctx, "token");
           // 2. Redirect to login
-          redirectUser(ctx, '/login')
+          redirectUser(ctx, '/login');
         }
-      }
+      
     } 
 
     return { pageProps };
@@ -62,7 +57,7 @@ class MyApp extends App {
 
 
   componentDidMount() {
-    window.addEventListener('Storage', this.syncLogout)
+    window.addEventListener('storage', this.syncLogout)
   }
 
 
@@ -70,11 +65,7 @@ class MyApp extends App {
     if (event.key === 'logout') {
       Router.push('/login')
     }
-  }
-
-
-
-
+  };
 
   
   render() {
@@ -85,7 +76,6 @@ class MyApp extends App {
       </Layout>
     );
   }
-
 }
 
 

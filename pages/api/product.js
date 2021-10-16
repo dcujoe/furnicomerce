@@ -19,12 +19,13 @@ export default async (req, res) => {
             res.status(405).send(`Method ${req.method} not allowed`);
             break;
     }
-}
+};
 
+
+// async function to handle get request of products from database
 async function handleGetRequest(req, res) {
   const { _id } = req.query;
   const product = await Product.findOne({ _id });
-
   res.status(200).json(product);
 }
 
@@ -36,23 +37,24 @@ async function handlePostRequest(req, res) {
             return res.status(422).send("Product missing one or more fields");
         } 
 
-        const product = new Product({ name, price, description, mediaUrl}).save()
+        const product = await new Product({ 
+            name,
+            price, 
+            description, 
+            mediaUrl}).save()
         res.status(201).json(product);
 
     } catch (error) {
         console.error(error);
-        res.status(500).send("Server error in creating product")
+        res.status(500).send("Server error in creating product");
     }
-    
 
 }
 
 async function handleDeleteRequest(req, res) {
     const { _id } = req.query;
     await Product.findOneAndDelete({ _id });
-
     res.status(204).json({});
-
 }
 
 

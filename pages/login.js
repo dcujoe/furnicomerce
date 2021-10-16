@@ -1,38 +1,35 @@
-import React from 'react'
-import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react'
-import Link from 'next/link'
-import catchErrors from '../utils/catchErrors'
-import baseUrl from '../utils/baseUrl'
-import axios from 'axios'
-import { handleLogin } from '../utils/auth'
+import React from 'react';
+import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react';
+import Link from 'next/link';
+import catchErrors from '../utils/catchErrors';
+import baseUrl from '../utils/baseUrl';
+import axios from 'axios';
+import { handleLogin } from '../utils/auth';
 
 const INITIAL_USER = {
   email: "",
   password: ""
-}
-
+};
 
 function Signup() {
-  const [user, setUser] = React.useState(INITIAL_USER)
-  const [disabled, setDisabled] = React.useState(true)
-  const [loading, setLoading] = React.useState(false)
-  const [error, setError] = React.useState('')
+  const [user, setUser] = React.useState(INITIAL_USER);
+  const [disabled, setDisabled] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState('');
 
   React.useEffect(() => {
     // disables the submit form if the user information is not entered
-    const isUser = Object.values(user).every(el => Boolean(el))
-    isUser ? setDisabled(false) : setDisabled(true)
-  }, [user])
+    const isUser = Object.values(user).every(el => Boolean(el));
+    isUser ? setDisabled(false) : setDisabled(true);
+  }, [user]);
 
   function handleChange(event) {
-    const { name, value } = event.target
+    const { name, value } = event.target;
    setUser(prevState => ({ ...prevState, [name]: value }));
-  
   }
 
 
   async function handleSubmit(event) {
-
     event.preventDefault()
 
 
@@ -43,8 +40,7 @@ function Signup() {
       const url = `${baseUrl}/api/login`;
       const payload = { ...user };
       const response = await axios.post(url, payload);
-      handleLogin(response.data)
-
+      handleLogin(response.data);
     } catch (error) {
       catchErrors(error, setError)
     } finally {
@@ -53,12 +49,13 @@ function Signup() {
   }
 
 
-  return <>
+  return ( 
+  <>
   <Message 
    attached
    icon="privacy"
    header="Welcome back!"
-   content="Log in with email and password..."
+   content="Log in with email and password"
    color="blue"
   />
   <Form error={Boolean(error)} loading={loading} onSubmit={handleSubmit}>
@@ -82,7 +79,7 @@ function Signup() {
        />
        <Form.Input
        fluid
-       icon="user"
+       icon="lock"
        iconPosition="left"
        label="Password"
        placeholder="Password"
@@ -98,18 +95,17 @@ function Signup() {
         color="orange"
         content="Login"
         />
-
-
     </Segment>
   </Form>
   <Message attached="bottom" warning>
     <Icon name="help"/>
-    New user? {""}
+    New user? {" "}
 <Link href="/signup">
   <a>Sign up here </a>
-</Link> {" "} instead
+</Link>{" "} instead
   </Message>
-  </>;
+  </>
+  );
 }
 
 export default Signup;

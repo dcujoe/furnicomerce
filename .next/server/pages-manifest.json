@@ -2,5 +2,13 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/login": "pages/login.js"
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/": "pages/index.js",
+  "/api/products": "pages/api/products.js",
+  "/api/login": "pages/api/login.js",
+  "/cart": "pages/cart.js",
+  "/account": "pages/account.js",
+  "/api/account": "pages/api/account.js",
+  "/login": "pages/login.js",
+  "/signup": "pages/signup.js"
 }

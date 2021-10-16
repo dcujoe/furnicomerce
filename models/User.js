@@ -27,7 +27,8 @@ const UserSchema = new mongoose.Schema({
         // root user has all admin privileges as well as change who is in admin or not
         enum: ["user", "admin", "root"]
     }
-}, {
+}, 
+{
     // this timestamps enable us know when users and admins joined
 
     timestamps: true

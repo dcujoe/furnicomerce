@@ -15,10 +15,6 @@ const ProductSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    price: {
-        type: Number,
-        required: true
-    },
     sku: {
         type: String,
         required: true,
@@ -33,7 +29,7 @@ const ProductSchema = new mongoose.Schema({
         required: true
     },
 
-})
+});
 
 
 //This is to make sure that the model has not been already generated
