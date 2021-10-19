@@ -4,7 +4,7 @@ import Router from 'next/router'
 
 export function handleLogin(token) {
 cookie.set("token", token)
-
+window.localStorage.setItem('logout', Date.now());
 Router.push('/account')
 
 }
