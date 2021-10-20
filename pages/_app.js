@@ -65,6 +65,8 @@ class MyApp extends App {
     if (event.key === 'logout') {
       console.log("logged out from storage");
       Router.push('/login')
+
+      // log out of storage
     }
   };
 
