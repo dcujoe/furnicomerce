@@ -8,7 +8,7 @@ function Product({ product, user }) {
 
   return (
       <>
-      <ProductSummary {...product} />
+      <ProductSummary user={user} {...product} />
       <ProductAttributes user={user} {...product} />
       </>
     );
@@ -19,7 +19,6 @@ Product.getInitialProps = async ({ query : { _id } }) => {
   //using _id as an endpoint to be used as a query string to fetch data
   const payload = { params: { _id } };
   const response = await axios.get(url, payload);
-
   return { product: response.data }
 };
 
