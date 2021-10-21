@@ -6,11 +6,19 @@ import baseUrl from '../../utils/baseUrl'
 import catchErrors from '../../utils/catchErrors'
 import cookie from 'js-cookie'
 
-function AddProductToCart({ user }) {
+function AddProductToCart({ user, productId }) {
   const [quantity, setQuantity] = React.useState(1);
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const router = useRouter();
+
+
+  React.useEffect(() => {
+    if (success) {
+      setTimeout(() => setSuccess(false), 3000);
+    }
+
+  }, [success])
 
 
   async function handleAddProductToCart() {
