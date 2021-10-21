@@ -20,7 +20,7 @@ class MyApp extends App {
 
 
   if (!token) {
-      // if the tocken used is protected(admin) we direct it to create
+      // if the token used is protected(admin) we direct it to create
       const isProtectedRoute = 
       ctx.pathname === '/account' || ctx.pathname === '/create';
       if (isProtectedRoute) {
@@ -64,7 +64,7 @@ class MyApp extends App {
   syncLogout = event => {
     if (event.key === 'logout') {
       console.log("logged out from storage");
-      Router.push('/login')
+      Router.push('/login');
 
       // log out of storage
     }
