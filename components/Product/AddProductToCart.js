@@ -2,7 +2,7 @@ import { Input } from 'semantic-ui-react'
 
 function AddProductToCart() {
   return (
-  <input
+  <Input
   type="number"
   min="1"
   placeholder="Quantity"

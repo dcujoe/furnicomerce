@@ -57,10 +57,10 @@ class MyApp extends App {
 
 
   componentDidMount() {
-    window.addEventListener('storage', this.syncLogout)
+    window.addEventListener('storage', this.syncLogout);
   }
 
-
+// how to log out from local storage
   syncLogout = event => {
     if (event.key === 'logout') {
       console.log("logged out from storage");
