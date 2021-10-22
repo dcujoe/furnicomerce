@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import shortid from 'shortid'
 //shortid is a package used to generate random ids for products
 
-//String property is a mongoose property that is destructred from mongoose schema
+//String property is a mongoose property that is destructed from mongoose schema
 const { String, Number } = mongoose.Schema.Types;
 
 
@@ -33,6 +33,6 @@ const ProductSchema = new mongoose.Schema({
 
 
 //This is to make sure that the model has not been already generated
-// mongoose.models.Product is to check if product models are already avaialable
+// mongoose.models.Product is to check if product models are already available
 export default mongoose.models.Product || 
 mongoose.model("Product", ProductSchema)
