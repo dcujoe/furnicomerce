@@ -60,11 +60,11 @@ async function handleGetRequest(req, res) {
         // If so, increment quantity (by number provided to request)
         if (productExists) {
             await Cart.findOneAndUpdate(
-                { _id: cart._id, "product.product": productId },
+                { _id: cart._id, "products.product": productId },
                 { $inc: { "products.$.quantity": quantity } }
             )
         } else {
-            const newProduct = { quantity.product: productId }
+            const newProduct = { quantity, product: productId }
             await Cart.findOneAndUpdate(
                 { _id: cart._id },
                 { $addToSet: { products: newProduct } }
