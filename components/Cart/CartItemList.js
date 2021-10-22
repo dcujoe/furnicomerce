@@ -1,4 +1,4 @@
-import { Header, Segment, Button, Icon, Item } from 'semantic-ui-react'
+import { Header, Segment, Button, Item } from 'semantic-ui-react'
 import { useRouter } from 'next/router'
 
 function CartItemList({ products, user }) {
@@ -33,7 +33,7 @@ function CartItemList({ products, user }) {
       <Segment secondary color="teal" inverted textAlign="center" placeholder
   >
     <Header icon>
-      <Icon name="shopping-basket" />
+    <i className="shopping basket icon"></i>
       No products in your cart. Add some!
     </Header>
   
