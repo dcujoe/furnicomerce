@@ -1,6 +1,18 @@
+import React from 'react';
 import { Divider, Segment, Button } from 'semantic-ui-react'
 
-function CartSummary() {
+function CartSummary({ products }) {
+  // this is used to check the state of our cart to know if its empty or not
+  const [isCartEmpty, setCartEmpty] = React.useState(false)
+
+
+
+  React.useEffect(() => {
+    setCartEmpty(products.length === 0);
+
+  }, [products])
+
+
   return (
     <>
     <Divider/>
@@ -9,6 +21,7 @@ function CartSummary() {
       <Button
       icon="cart"
       color="teal"
+      disabled={isCartEmpty}
       floated="right"
       content="Checkout"
       />

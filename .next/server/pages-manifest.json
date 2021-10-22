@@ -3,11 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/cart": "pages/cart.js",
-  "/login": "pages/login.js",
-  "/api/login": "pages/api/login.js",
-  "/api/account": "pages/api/account.js",
-  "/": "pages/index.js",
-  "/api/products": "pages/api/products.js",
-  "/signup": "pages/signup.js",
-  "/account": "pages/account.js"
+  "/login": "pages/login.js"
 }

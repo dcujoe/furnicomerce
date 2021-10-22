@@ -48,7 +48,8 @@ function CartItemList({ products, user }) {
     </div>
   </Segment>    )
   } 
-  return <Item.Group items={mapCartProductsToItems(products)}/>
+  // divided: prop used to divide products into two rows vertically
+  return <Item.Group divided items={mapCartProductsToItems(products)} />
   
 
   
