@@ -83,6 +83,8 @@ async function handleGetRequest(req, res) {
 
 
 async function handleDeleteRequest(req, res) {
+    const { productId } = req.query;
+
     if (!("authorization" in req.headers)) {
         return res.status(401).send("No authorization token");
     } 
@@ -90,7 +92,17 @@ async function handleDeleteRequest(req, res) {
         const { userId } = jwt.verify(
             req.headers.authorization, 
             process.env.JWT_SECRET);
-    } catch {
+    const cart = await Cart.findOneAndUpdate(
+        { user: userId },
+        { $pull: { products: { product: productId } } },
+        { new: true }
+    ).populate({
+        path: "products.product",
+        model: "Product"
+    }) 
+    res.status(200).json(cart.products);
+
+    } catch (error) {
         console.error(error);
         res.status(403).send("Please login again");
     }
