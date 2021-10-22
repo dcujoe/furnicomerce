@@ -14,8 +14,12 @@ function AddProductToCart({ user, productId }) {
 
 
   React.useEffect(() => {
+    let timeout;
     if (success) {
-      setTimeout(() => setSuccess(false), 3000);
+     timeout = setTimeout(() => setSuccess(false), 3000);
+    }
+    return () => {
+      clearTimeout(timeout);
     }
 
   }, [success])
@@ -38,6 +42,7 @@ function AddProductToCart({ user, productId }) {
     setLoading(false);
 
   }
+}
 
   return (
   <Input

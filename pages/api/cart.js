@@ -64,7 +64,7 @@ async function handleGetRequest(req, res) {
                 { $inc: { "products.$.quantity": quantity } }
             )
         } else {
-            const newProduct = { quantity. product: productId }
+            const newProduct = { quantity.product: productId }
             await Cart.findOneAndUpdate(
                 { _id: cart._id },
                 { $addToSet: { products: newProduct } }
