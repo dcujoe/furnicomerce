@@ -43,6 +43,8 @@ async function handlePutRequest(res, res) {
         res.status(403).send("Please login again");
     
     }
+
+    return console.log(product.p.quantity)
 }
 
 
