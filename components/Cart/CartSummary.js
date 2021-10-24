@@ -1,4 +1,5 @@
 import React from 'react';
+import StripeCheckout from 'react-stripe-checkout';
 import { Divider, Segment, Button } from 'semantic-ui-react'
 import calculateCartTotal from '../../utils/calculateCartTotal'
 
@@ -25,6 +26,7 @@ function CartSummary({ products }) {
     <Divider/>
     <Segment clearing size="large">
       <strong>Sub total</strong> ${cartAmount}
+      <StripeCheckout>
       <Button
       icon="cart"
       color="teal"
@@ -32,6 +34,8 @@ function CartSummary({ products }) {
       floated="right"
       content="Checkout"
       />
+      </StripeCheckout>
+      
     </Segment>
     </>
   )

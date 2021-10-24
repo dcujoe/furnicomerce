@@ -22,6 +22,10 @@ function Cart({ products, user }) {
   
   }
 
+  async function handleCheckout(productId) {
+
+  }
+
   
   return (
     <Segment>
@@ -32,6 +36,7 @@ function Cart({ products, user }) {
       />
       <CartSummary 
       products={cartProducts} 
+      handleCheckout={handleCheckout}
       />
     </Segment>
   );
