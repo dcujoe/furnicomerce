@@ -7,10 +7,10 @@ import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
 import cookie from 'js-cookie';
 
-async function Cart({ products, user }) {
+function Cart({ products, user }) {
   const [cartProducts, setCartProducts] = React.useState(products);
 
-  function handleRemoveFromCart(productId) {
+  async function handleRemoveFromCart(productId) {
     const url = `${baseUrl}/api/cart`;
     const token = cookie.get('token')
     const payload = { 
