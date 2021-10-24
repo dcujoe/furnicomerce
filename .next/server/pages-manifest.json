@@ -3,5 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/cart": "pages/cart.js",
+  "/": "pages/index.js",
+  "/api/products": "pages/api/products.js",
   "/login": "pages/login.js"
 }
