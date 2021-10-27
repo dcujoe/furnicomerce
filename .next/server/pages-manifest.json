@@ -3,5 +3,10 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/product": "pages/product.js"
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/api/products": "pages/api/products.js",
+  "/product": "pages/product.js",
+  "/signup": "pages/signup.js",
+  "/login": "pages/login.js",
+  "/api/product": "pages/api/product.js"
 }
