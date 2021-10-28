@@ -59,8 +59,9 @@ async function handlePutRequest(res, res) {
         await Cart.findOneAndUpdate(
             { _id: cart._id },
                 { $addToSet: { products: newProduct } }
-        )
+        );
     }
+    res.status(200).send("Cart updated");
     } catch (error) {
         console.error(error);
         res.status(403).send("Please login again");

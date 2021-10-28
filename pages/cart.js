@@ -3,12 +3,15 @@ import { Segment } from 'semantic-ui-react';
 import CartItemList from '../components/Cart/CartItemList';
 import CartSummary from '../components/Cart/CartSummary';
 import { parseCookies } from 'nookies';
+import catchErrors from '../utils/catchErrors'
 import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
 import cookie from 'js-cookie';
 
 function Cart({ products, user }) {
   const [cartProducts, setCartProducts] = React.useState(products);
+  const [success, setSuccess] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
 
   async function handleRemoveFromCart(productId) {
     const url = `${baseUrl}/api/cart`;
@@ -22,21 +25,37 @@ function Cart({ products, user }) {
   
   }
 
-  async function handleCheckout(productId) {
+  async function handleCheckout(paymentData) {
+    try {
+      setLoading(true);
+      const url = `${baseUrl}/api/checkout`;
+      const token = cookie.get('token');
+      const payload = { paymentData };
+      const headers = { headers: { 'Authorization': token } };
+      await axios.get(url, payload, headers);
+      success(true);
+
+    } catch (error) {
+      catchErrors(error, window.alert);
+    } finally {
+      setLoading(false);
+    }
 
   }
 
   
   return (
-    <Segment>
+    <Segment loading={loading}>
       <CartItemList 
       handleRemoveFromCart={handleRemoveFromCart} 
       user={user} 
       products={cartProducts} 
+      success={success}
       />
       <CartSummary 
       products={cartProducts} 
       handleCheckout={handleCheckout}
+      success={success}
       />
     </Segment>
   );

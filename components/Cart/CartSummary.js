@@ -3,7 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import { Divider, Segment, Button } from 'semantic-ui-react'
 import calculateCartTotal from '../../utils/calculateCartTotal'
 
-function CartSummary({ products }) {
+function CartSummary({ products, handleCheckout }) {
   const [cartAmount, setCartAmount] = React.useState(0);
   const [stripeAmount, setStripeAmount] = React.useState(0);
   
@@ -13,9 +13,9 @@ function CartSummary({ products }) {
 
 
   React.useEffect(() => {
-    const { cartTotal, stripeTotal } = calculateCartTotal(products)
-    setCartAmount(cartTotal)
-    setStripeAmount(stripeTotal)
+    const { cartTotal, stripeTotal } = calculateCartTotal(products);
+    setCartAmount(cartTotal);
+    setStripeAmount(stripeTotal);
     setCartEmpty(products.length === 0);
 
   }, [products])
@@ -26,11 +26,23 @@ function CartSummary({ products }) {
     <Divider/>
     <Segment clearing size="large">
       <strong>Sub total</strong> ${cartAmount}
-      <StripeCheckout>
+      <StripeCheckout
+       name="Furnicommerce"
+       amount={stripeAmount}
+       image={products.length > 0 ? products[0].product.mediaUrl : ""}
+       currency="euro"
+       shippingAddress={true}
+       billAddress={true}
+       zipCode={true}
+       token={handleCheckout}
+       triggerEvent="onClick"
+
+       //when the button is clicked for pay. The handleCheckout is executed
+      >
       <Button
       icon="cart"
       color="teal"
-      disabled={isCartEmpty}
+      disabled={isCartEmpty || success}
       floated="right"
       content="Checkout"
       />
@@ -38,7 +50,7 @@ function CartSummary({ products }) {
       
     </Segment>
     </>
-  )
+  );
 }
 
 export default CartSummary;
