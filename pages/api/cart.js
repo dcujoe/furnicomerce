@@ -38,6 +38,29 @@ async function handlePutRequest(res, res) {
         const { userId } = jwt.verify(
             req.headers.authorization, 
             process.env.JWT_SECRET);
+
+    // Get user cart based on useId
+    const cart = await Cart.findOne({ user: userId });
+
+    //Check if product already exists in cart
+
+    const productExists = cart.products.some(doc => 
+        ObjectId(productId).equals(doc.product));
+
+    // if so, increment quantity (by number provided to request)
+    if (productExists) {
+        await Cart.findOneAndUpdate(
+            { _id: cart.id, "products.product": productId },
+            { $inc: { "products.$.quantity": quantity } }
+        );
+    } else {
+        // if not, add new product with given Quantity
+        const newProduct = { quantity, product: productId };
+        await Cart.findOneAndUpdate(
+            { _id: cart._id },
+                { $addToSet: { products: newProduct } }
+        )
+    }
     } catch (error) {
         console.error(error);
         res.status(403).send("Please login again");
