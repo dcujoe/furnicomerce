@@ -14,7 +14,7 @@ function ProductPagination({ totalPages }) {
       onPageChange={(event, data) => {
         data.activePage === 1
         ? router.push('/')
-        : router.push(`/?page${data.activePage}`);
+        : router.push(`/?page=${data.activePage}`);
 
       }}
       />
