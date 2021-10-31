@@ -12,6 +12,8 @@ export default async (req, res) => {
     const pageNum = Number(page);
     const pageSize = Number(size);
     let products = [];
+    const totalDocs = await Product.countDocuments();
+    const totalPages = Math.ceil(totalDocs / pageSize);
 
     // how to return first page number
     if (pageNum === 1) {
@@ -21,7 +23,7 @@ export default async (req, res) => {
         products = await Product.find().skip(skips).limit(pageSize)
     }
     // const products = await Product.find();
-    res.status(200).json(products);
+    res.status(200).json({ products, totalPages });
 };
 
 
