@@ -15,11 +15,34 @@ export default async(req, res) => {
 
     try {
         // 1. Verify and get user id from token 
+        const { userId } = jwt.verify(
+            req.headers.authorization, 
+            process.env.JWT_SECRET);
         // 2. find cart based on user id and populate it 
+        Cart.findOne({ user: userId }).populate({ 
+            path: "products.product",
+            model: "Product"
+        })
         // 3. Calculate cart totals again from cart products
+        const { cartTotal, stripeTotal } = calculateCartTotal(cart.products);
         // 4. Get email fro payment data, see if email is linked with existing stripe customer 
+        const prevCustomer = await stripe.customers.list({
+            email: paymentData.email,
+            limit: 1
+        });
         // 5. If not existing customer, create them based on their email 
+        const isExistingCustomer = prevCustomer.data.length > 0;
+
         // 6. Create with charge total, send receipt email to stripe customer 
+        let newCustomer;
+        if (!isExistingCustomer) {
+            newCustomer = await stripe.customers.create({
+                email: paymentData.email,
+                source: paymentData.id
+            })
+        }
+
+        const customer = 
         // 7. Add order data to database
         // 8. Clear products in cart
         // 9. Send back success (200) response
