@@ -13,12 +13,16 @@ function Home({ products }) {
 
 }
 
-Home.getInitialProps = async () => {
-  // fetch data from server
+Home.getInitialProps = async ctx => {
+  // creating pagination using a query string of the pages
+  const page = ctx.query.page ? ctx.query.page : "1";
+  const size = 9;
   const url = `${baseUrl}/api/products`;
-  // return response data as an object
+  const payload = { params: { page, size } };
+
+
     
-    const response = await axios.get(url);
+    const response = await axios.get(url, payload);
     return { products: response.data };
   
   // note: this object would be merged with existing props
