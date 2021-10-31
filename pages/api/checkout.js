@@ -33,7 +33,6 @@ export default async(req, res) => {
         // 5. If not existing customer, create them based on their email 
         const isExistingCustomer = prevCustomer.data.length > 0;
 
-        // 6. Create with charge total, send receipt email to stripe customer 
         let newCustomer;
         if (!isExistingCustomer) {
             newCustomer = await stripe.customers.create({
@@ -42,7 +41,17 @@ export default async(req, res) => {
             })
         }
 
-        const customer = 
+        const customer = (isExistingCustomer && prevCustomer.data[0].id) || newCustomer.id;
+
+        // 6. Create with charge total, send receipt email to stripe customer 
+        await stripe.charges.create({
+            currency: "usd",
+            amount: stripeTotal,
+            receipt_email: paymentData.email,
+            customer,
+            description: `Checkout | ${paymentData.email} | {paymentData.id}`
+        })
+        
         // 7. Add order data to database
         // 8. Clear products in cart
         // 9. Send back success (200) response
