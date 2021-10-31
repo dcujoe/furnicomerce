@@ -30,7 +30,7 @@ function CartSummary({ products, handleCheckout }) {
        name="Furnicommerce"
        amount={stripeAmount}
        image={products.length > 0 ? products[0].product.mediaUrl : ""}
-       currency="euro"
+       currency="EUR"
        shippingAddress={true}
        billAddress={true}
        zipCode={true}

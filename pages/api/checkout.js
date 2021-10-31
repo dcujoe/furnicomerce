@@ -1,8 +1,10 @@
 import Stripe from 'stripe';
 import uuidv4 from 'uuid/v4';
 import jwt from 'jsonwebtoken';
+import Order from '../../models/Order'
 import Cart from '../../models/Cart'
 import calculateCartTotal from '../../utils/calculateCartTotal';
+import cart from './cart';
 
 
 
@@ -44,17 +46,33 @@ export default async(req, res) => {
         const customer = (isExistingCustomer && prevCustomer.data[0].id) || newCustomer.id;
 
         // 6. Create with charge total, send receipt email to stripe customer 
-        await stripe.charges.create({
+        const charge = await stripe.charges.create({
             currency: "usd",
             amount: stripeTotal,
             receipt_email: paymentData.email,
             customer,
             description: `Checkout | ${paymentData.email} | {paymentData.id}`
+        }, {
+            // uuidv4 is an item potency key used to ensure that a charge is not executed twice 
+            idempotency_key: uuidv4()
+
         })
         
         // 7. Add order data to database
+        await new Order({
+            user: userId,
+            email: paymentData.email,
+            total: cartTotal,
+            products: cart.products
+        }).save()
         // 8. Clear products in cart
+
+        await Cart.findOneAndUpdate(
+            { _id: cart._id },
+            { $set: { products: [] } }
+        )
         // 9. Send back success (200) response
+        res.status(200).send("Checkout was successful");
     } catch (error) {
         console.error(error);
         res.status(500).send("Error processing charge");

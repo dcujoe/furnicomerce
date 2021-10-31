@@ -2,12 +2,12 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/product": "pages/product.js",
   "/": "pages/index.js",
-  "/api/product": "pages/api/product.js",
+  "/api/products": "pages/api/products.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
   "/cart": "pages/cart.js",
   "/signup": "pages/signup.js",
+  "/api/product": "pages/api/product.js",
   "/login": "pages/login.js",
-  "/api/products": "pages/api/products.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
+  "/product": "pages/product.js"
 }
