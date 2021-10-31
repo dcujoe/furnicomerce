@@ -6,6 +6,7 @@ import calculateCartTotal from '../../utils/calculateCartTotal'
 function CartSummary({ products, handleCheckout }) {
   const [cartAmount, setCartAmount] = React.useState(0);
   const [stripeAmount, setStripeAmount] = React.useState(0);
+  const [success, setSuccess] = React.useState(false);
   
   // this is used to check the state of our cart to know if its empty or not
   const [isCartEmpty, setCartEmpty] = React.useState(false)
@@ -37,7 +38,6 @@ function CartSummary({ products, handleCheckout }) {
        stripeKey="pk_test_pIjIeW6GeqJljjHAvrRFXQ5t00Xo3PKcsS"
        token={handleCheckout}
        triggerEvent="onClick"
-
        //when the button is clicked for pay. The handleCheckout is executed
       >
       <Button
