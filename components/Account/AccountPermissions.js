@@ -67,7 +67,7 @@ function UserPermission({ user }) {
       return;
     }
 
-    
+    udpatePermission()
 
   }, [admin])
 
@@ -76,6 +76,11 @@ function UserPermission({ user }) {
     setAdmin(prevState => !prevState);
   }
 
+  async function udpatePermission() {
+    const url = `${baseUrl}/api/account`
+    const payload = { _id: user._id, role: admin ? "admin" : "user" }
+    await axios.put(url, payload)
+  }
 
 
 
