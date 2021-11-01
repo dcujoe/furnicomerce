@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 const { String } = mongoose.Schema.Types
 
@@ -32,7 +32,8 @@ const UserSchema = new mongoose.Schema({
     // this timestamps enable us know when users and admins joined
 
     timestamps: true
-})
+}
+);
 
 
 
