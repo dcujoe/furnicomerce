@@ -7,7 +7,7 @@ import baseUrl from '../utils/baseUrl'
 
 
 function Home({ products, totalPages }) {
-  console.log(products)
+ 
  
  
   return (

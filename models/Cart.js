@@ -22,4 +22,8 @@ const CartSchema = new mongoose.Schema({
     ]
 });
 
+// Line 29 can also be redefined as the code below
+// mongoose.models.Cart = mongoose.model("Cart", CartSchema);
+// export default mongoose.models.Cart;
+
 export default mongoose.models.Cart || mongoose.model("Cart", CartSchema)

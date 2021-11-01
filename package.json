@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "build": "next build"
+    "build": "next build",
+    "createSchema": "node ./utils/createSchema.js"
   },
   "keywords": [],
   "author": "",
