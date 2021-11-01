@@ -20,7 +20,7 @@ async function connectDb() {
     })
     console.log("DB connected")
     connection.isConnected = db.connections[0].readyState;
-    console.log(db);
+    
 }
 
 // this whole process is used when connecting mongo DB application with a serverless application like AWS lambda
