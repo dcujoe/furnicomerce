@@ -77,13 +77,14 @@ async function handleGetRequest(req, res) {
         return res.status(401).send("No authorization token");
     } 
     try {
-        
-
         const { userId } = jwt.verify(
             req.headers.authorization, 
             process.env.JWT_SECRET);
         // Get user cart based on userId
-        const cart = await Cart.findOne({ user: userId });
+        const cart = await Cart.findOne({ user: userId }).populate({
+            path: "products.product",
+            model: "Product"
+        });
         // Check if product already exists in cart
         const productExists = cart.products.some(doc => ObjectId(productId).equals(doc.productId));
         // If so, increment quantity (by number provided to request)
