@@ -23,8 +23,8 @@ export default async (req, res) => {
         // 4. If so, generate a token and return
         if (passwordsMatch) { 
              
-           const token = jwt.sign({ userId: user._id }, 
-            process.env.JWT_SECRET, { expiresIn: '7d' });
+           const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { 
+               expiresIn: '7d' });
         
         // 5. send that token to the client
         res.status(200).json(token)
@@ -35,5 +35,4 @@ export default async (req, res) => {
         console.error(error)
         res.status(500).send("Error logging in user");
     }
-
 };
