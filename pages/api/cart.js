@@ -68,7 +68,7 @@ async function handlePutRequest(res, res) {
     
     }
 
-    return console.log(product.p.quantity)
+    
 }
 
 

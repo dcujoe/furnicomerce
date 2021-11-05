@@ -5,5 +5,7 @@
   "/": "pages/index.js",
   "/api/products": "pages/api/products.js",
   "/cart": "pages/cart.js",
+  "/login": "pages/login.js",
+  "/signup": "pages/signup.js",
   "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }
