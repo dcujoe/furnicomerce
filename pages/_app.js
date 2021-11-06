@@ -66,7 +66,7 @@ class MyApp extends App {
       console.log("logged out from storage");
       Router.push('/login');
 
-      // log out of storage
+      
     }
   };
 
