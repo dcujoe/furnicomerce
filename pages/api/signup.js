@@ -17,8 +17,8 @@ export default async (req, res) => {
         // 1. validate name/ email / password values
         if (!isLength(name, { min: 3, max: 10 })) {
             return res.status(422).send("Name must be 3-10 characters long");
-        } else if (!isLength(email, { min: 6 })) {
-            return res.status(422).send("Name must be at least characters long");
+        } else if (!isLength(password, { min: 6 })) {
+            return res.status(422).send("Password must be at least characters long");
         } else if (!isEmail(email)) {
             return res.status(422).send("Email must be valid");
         }

@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/login": "pages/login.js",
-  "/cart": "pages/cart.js"
+  "/signup": "pages/signup.js",
+  "/cart": "pages/cart.js",
+  "/api/signup": "pages/api/signup.js"
 }
