@@ -34,7 +34,7 @@ export default function Header({ user }) {
               //in line style props style
               style={{ marginRight: "1em" }}
             />
-            Furnicommerce
+            Alladin
           </Menu.Item>
         </Link>
 
