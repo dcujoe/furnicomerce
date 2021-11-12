@@ -43,6 +43,9 @@ function Signup() {
       const url = `${baseUrl}/api/signup`
       const payload = { ...user }
       const response = await axios.post(url, payload)
+
+      // use the handleLogin function to pass a response.data when the login is done using tokens generated
+      // in the local storage
       handleLogin(response.data);
 
     } catch (error) {

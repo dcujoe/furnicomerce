@@ -1,6 +1,8 @@
 import cookie from 'js-cookie'
 import Router from 'next/router'
 
+// we can use the Router directly since we are inside a function and not a function component
+
 
 export function handleLogin(token) {
 
