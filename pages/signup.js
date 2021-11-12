@@ -40,9 +40,9 @@ function Signup() {
       // make a request to signup user
       setLoading(true);
       setError("");
-      const url = `${baseUrl}/api/signup`;
-      const payload = { ...user };
-      const response = await axios.post(url, payload);
+      const url = `${baseUrl}/api/signup`
+      const payload = { ...user }
+      const response = await axios.post(url, payload)
       handleLogin(response.data);
 
     } catch (error) {
