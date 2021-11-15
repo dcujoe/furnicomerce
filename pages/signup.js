@@ -53,7 +53,7 @@ function Signup() {
     } finally {
       setLoading(false);
     }
-  }
+  
 
 
   return (
