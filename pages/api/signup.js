@@ -62,3 +62,5 @@ export default async (req, res) => {
 
 
 }
+
+export default signup;
