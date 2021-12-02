@@ -54,8 +54,8 @@ function Signup() {
       setLoading(false);
     }
   
-
-
+  }
+  
   return (
   <>
   <Message 
@@ -125,10 +125,10 @@ function Signup() {
   </Message>
   </>
   );
+
 }
-}
 
 
-
+export default Signup;
 
 // this could be wrong. have to review it.

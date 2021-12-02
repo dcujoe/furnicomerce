@@ -11,7 +11,7 @@ const INITIAL_USER = {
   password: ""
 };
 
-function Signup() {
+function Login() {
   const [user, setUser] = React.useState(INITIAL_USER);
   const [disabled, setDisabled] = React.useState(true);
   const [loading, setLoading] = React.useState(false);
@@ -108,3 +108,4 @@ function Signup() {
   );
 }
 
+export default Login;
