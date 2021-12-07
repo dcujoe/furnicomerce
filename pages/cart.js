@@ -39,7 +39,7 @@ function Cart({ products, user }) {
       catchErrors(error, window.alert);
     } finally {
       setLoading(false);
-      setSuccess(true);
+     
     }
 
   }
