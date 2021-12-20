@@ -23,8 +23,10 @@ export default function Layout ({ children, user }) {
       <Header user={user} />
       <Container text style={{ paddingTop: "1em" }}>
         
-        {children}
-        
+    {children}
+     <ImageSlider />
+
+     //create ImageSlider component
       </Container>
     </>
   );
