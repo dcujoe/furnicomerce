@@ -18,7 +18,7 @@ function ProductList({ products }) {
   // items to be represented per row (CSS) and items should be centered
   return <Card.Group 
          stackable 
-         itemsPerRow="3" centered items=
+         itemsPerRow="4" centered items=
   {mapProductsToItems(products)} />
   
 }
