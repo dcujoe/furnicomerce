@@ -1,4 +1,5 @@
-import { Link, Image } from 'semantic-ui-react'
+import { Link, Image } from 'semantic-ui-react';
+
 
 
 function ImageSlider() {
