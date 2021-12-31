@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, } from 'semantic-ui-react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 
