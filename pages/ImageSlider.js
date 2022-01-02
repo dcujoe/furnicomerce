@@ -1,38 +1,30 @@
-import React from 'react';
-import { Link, } from 'semantic-ui-react';
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
+import React, { useState } from "react";
 
-const slideImages = [
-  {
-    url: 'images/slide_2.jpg',
-    caption: 'Slide 1'
-  },
-  {
-    url: 'images/slide_3.jpg',
-    caption: 'Slide 2'
-  },
-  {
-    url: 'images/slide_4.jpg',
-    caption: 'Slide 3'
-  },
-];
+const ImageSlider = ({ images }) => { // takes in images as props
+  const [index, setIndex] = useState(0); // create state to keep track of images index, set the default index to 0
 
-const Slideshow = () => {
-    return (
-      <div className="slide-container">
-        <Slide>
-         {slideImages.map((slideImage, index)=> (
-            <div className="each-slide" key={index}>
-              <div style={{'backgroundImage': `url(${slideImage.url})`}}>
-                //<span>{slideImage.caption}</span>
-              </div>
-            </div>
-          ))} 
-        </Slide>
+  const slideRight = () => {
+    setIndex((index + 1) % images.length); // increases index by 1
+  };
+
+  const slideLeft = () => {
+    const nextIndex = index - 1;
+    if (nextIndex < 0) {
+      setIndex(images.length - 1); // returns last index of images array if index is less than 0
+    } else {
+      setIndex(nextIndex);
+    }
+  };
+
+  return (
+    images.length > 0 && (
+      <div>
+        <button onClick={slideLeft}>{"<"}</button>
+        <img src={images[index]} alt={index} />
+        <button onClick={slideRight}>{">"}</button>
       </div>
     )
-}
+  );
+};
 
-export default Slideshow;
-  
+export default ImageSlider;
