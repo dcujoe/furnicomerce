@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Container } from "semantic-ui-react";
-
+import ImageSlider from ".."
 import Header from "./Header";
 import HeadContent from "./HeadContent";
 import ProductList from "../../components/Index/ProductList"
