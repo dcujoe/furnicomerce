@@ -76,6 +76,7 @@ export default async(req, res) => {
         res.status(200).send("Checkout was successful");
     } catch (error) {
         console.error(error);
+        //Console.error used to send error messages
         res.status(500).send("Error processing charge");
     }
 }
