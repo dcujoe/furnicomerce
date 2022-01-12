@@ -6,7 +6,6 @@ import jwt from 'jsonwebtoken'
 
 connectDb()
 
-
 export default async (req, res) => {
     const { email, password } = req.body
 
@@ -29,9 +28,11 @@ export default async (req, res) => {
         // 5. send that token to the client
         res.status(200).json(token)
         } else {
+            // response when password not matching
         res.status(401).send("Passwords do not match")
         }
     } catch (error) {
+        // console.error used to send error response
         console.error(error)
         res.status(500).send("Error logging in user");
     }
