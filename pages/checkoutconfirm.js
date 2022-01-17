@@ -47,6 +47,21 @@ function Cart({ products, user }) {
 
   }
 
+  async function handleCheckout(paymentData) {
+      try {
+          setLoading(true);
+          const url = `{baseUrl}/api/checkout`;
+          const payload = { paymentData };
+          const headers = { headers: { 'Authorization': token } };
+          await axios.get(url, payload, headers);
+          success(true);
+      } catch (error) {
+          catchErrors(error, window.alert);
+      } finally {
+          setLoading(false);
+      }
+  }
+
   
   return (
     <Segment loading={loading}>
@@ -61,6 +76,13 @@ function Cart({ products, user }) {
       handleCheckout={handleCheckout}
       success={success}
       />
+      <CartItemList
+      handleCheckout={handleCheckout}
+      user={user} 
+      products={cartProducts}
+      success={success}
+       />
+
     </Segment>
   );
 }
