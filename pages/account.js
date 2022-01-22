@@ -32,18 +32,3 @@ Account.getInitialProps = async ctx => {
 }
 
 
-//practice on account AccountPermissions
-AccountLinks.getInitialProps = async ctx => {
-  const { token } = parseCookies(ctx)
-  if(!token) {
-    return { orders: [] }
-  }
-
-  const payload = { headers: { Authorization: token } }
-  const url = `${baseUrl}/api/orders`;
-  const response = await axios.get(url, payload);
-  await response.data;
-}
-
-
-export default Account;
