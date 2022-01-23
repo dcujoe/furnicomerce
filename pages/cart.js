@@ -77,4 +77,19 @@ Cart.getInitialProps = async ctx => {
 
 
 
+//practice for cart.js
+Cart.getInitialProps = async ctx => {
+  const { token } = parseCookies(ctx);
+  if (!token) {
+    return { products: [] };
+  }
+
+  const url = `${baseUrl}/api/cart`;
+  const payload = { headers: { Authorization: token } };
+  await axios.get(url, payload);
+
+  return { products: response.data };
+}
+
+
 export default Cart;
