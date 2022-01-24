@@ -48,6 +48,19 @@ function CreateProduct() {
     
   }
 
+//practice handleChange
+
+function handleChange(event) {
+  const { name, value, files } = event.target;
+  if (name === 'media') {
+    setProduct(prevState => ({ ...prevState, media: files[0]}))
+    setMediaPreview(window.URL.createObjectURL(files[0]))
+  } else {
+    setProduct((prevState) => ({ ...prevState, [name]: value }))
+  }
+}
+
+
 // setting a function to upload data and making a post request to the remote server
   async function handleImageUpload() {
     const data = new FormData();
