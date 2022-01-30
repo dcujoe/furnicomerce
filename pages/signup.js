@@ -55,6 +55,15 @@ function Signup() {
     }
 
 
+    //practice make a request to signup users
+    setLoading(true);
+    setError("");
+    const url = `${baseUrl}/api/signup`;
+    const payload = { ...user };
+    const response = await axios.post(url, payload);
+    
+
+
   
   
   }
