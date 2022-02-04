@@ -63,7 +63,14 @@ const [error, setError] = React.useState('');
     } finally {
       setLoading(false);
     }
-
+ // practice with
+ try {
+   setLoading(true);
+   setError("");
+   const url = `${baseUrl}/api/signup`
+   const paylaod = { ...user }
+   const response = await axios.post(url, payload);
+ }
 
     
   
