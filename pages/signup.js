@@ -70,6 +70,13 @@ const [error, setError] = React.useState('');
    const url = `${baseUrl}/api/signup`
    const paylaod = { ...user }
    const response = await axios.post(url, payload);
+
+   //use the handleLogin function to pass a response.data when the login is done using tokens generated from the
+   handleLogin(response.data)
+
+ } catch (error) {
+   catchErrors(error, setError);
+ }
  }
 
     
