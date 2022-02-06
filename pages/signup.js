@@ -65,18 +65,17 @@ const [error, setError] = React.useState('');
     }
  // practice with
  try {
+   //make request to signup users
    setLoading(true);
    setError("");
    const url = `${baseUrl}/api/signup`
-   const paylaod = { ...user }
+   const payload = { ...user };
    const response = await axios.post(url, payload);
 
-   //use the handleLogin function to pass a response.data when the login is done using tokens generated from the
-   handleLogin(response.data)
+   handleLogin(response.data);
 
- } catch (error) {
-   catchErrors(error, setError);
- }
+ } 
+ 
  }
 
     
