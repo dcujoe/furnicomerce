@@ -22,6 +22,13 @@ function Signup() {
   const [error, setError] = React.useState('');
 
 
+  //practice the initial states in react and
+  const [user, setUser] = React.useState(INITIAL_USER);
+  const [disabled, setDisabled] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState("");
+
+
 
 // practice for react statuses
 const [user, setUser] = React.useState(INITIAL_USER);
@@ -64,17 +71,9 @@ const [error, setError] = React.useState('');
       setLoading(false);
     }
  // practice with
- try {
-   //make request to signup users
-   setLoading(true);
-   setError("");
-   const url = `${baseUrl}/api/signup`
-   const payload = { ...user };
-   const response = await axios.post(url, payload);
+ 
 
-   handleLogin(response.data);
 
- } 
  
  }
 
@@ -148,12 +147,13 @@ const [error, setError] = React.useState('');
     Existing user? {""}
 <Link href="/login">
   <a>Log in here </a>
-</Link> {" "} instead
+</Link> {""} instead
   </Message>
   </>
   );
 
 }
+
 
 
 export default Signup;
