@@ -13,6 +13,13 @@ const INITIAL_USER = {
   password: ""
 };
 
+//practice for const object
+
+const INITIAL_USER = { 
+  name: "",
+  email: "",
+  password: ""
+};
 
 function Signup() {
   // setting the states
@@ -22,19 +29,11 @@ function Signup() {
   const [error, setError] = React.useState('');
 
 
-  //practice the initial states in react and
-  const [user, setUser] = React.useState(INITIAL_USER);
-  const [disabled, setDisabled] = React.useState(true);
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState("");
+  
 
 
 
-// practice for react statuses
-const [user, setUser] = React.useState(INITIAL_USER);
-const [disabled, setDisabled] = React.useState(true);
-const [loading, setLoading] = React.useState(false);
-const [error, setError] = React.useState('');
+
 
 
   React.useEffect(() => {
