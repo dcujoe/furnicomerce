@@ -13,13 +13,6 @@ const INITIAL_USER = {
   password: ""
 };
 
-//practice for const object
-
-const INITIAL_USER = { 
-  name: "",
-  email: "",
-  password: ""
-};
 
 function Signup() {
   // setting the states
