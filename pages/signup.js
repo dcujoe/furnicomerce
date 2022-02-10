@@ -22,6 +22,11 @@ function Signup() {
   const [error, setError] = React.useState('');
 
 
+  //practice session
+  const [user, setUser] = React.useState(INITIAL_USER);
+  const [disabled, setDisabled] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState("");
   
  
 
