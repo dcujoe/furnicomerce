@@ -1,14 +1,13 @@
 import Head from "next/head";
 import { Container } from "semantic-ui-react";
-import ImageSlider from ".."
 import Header from "./Header";
 import HeadContent from "./HeadContent";
 import ProductList from "../../components/Index/ProductList"
 
 
 export default function Layout ({ children, user }) {
-  return (
-    <>
+  return 
+  (<>
       <Head>
         <HeadContent />
         {/* Stylesheets */}
@@ -24,12 +23,8 @@ export default function Layout ({ children, user }) {
       <Container text style={{ paddingTop: "1em" }}>
         
     {children}
-     <ImageSlider />
-
-     //create ImageSlider component
-      </Container>
+    </Container>
+    
     </>
-  );
-}
-
-
+    )}
+ 
