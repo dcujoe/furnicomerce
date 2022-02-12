@@ -27,7 +27,15 @@ export default async (req, res) => {
 async function handleGetRequest(req, res) {
   const { _id } = req.query;
   const product = await Product.findOne({ _id });
-  res.status(200).json(product);
+  const { mediaUrl } = req.body;
+
+  try {
+      if (!mediaUrl) {
+        return res.status(422).send("Product missing try another time");
+      } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error in creating product");
+  
 }
 
 async function handlePostRequest(req, res) {
@@ -79,4 +87,3 @@ async function handleDeleteRequest(req, res) {
 
 
 // functions for get & delete requests GET -> handleGetRequest DELETE -> handleDeleteRequest
-

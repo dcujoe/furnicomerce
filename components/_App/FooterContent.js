@@ -1,7 +1,6 @@
-export default () => (
+function FooterContent() {
+    return (
     <>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta charSet="utf-8" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -56,4 +55,6 @@ export default () => (
       <meta name="theme-color" content="#00df94" />
     </>
   );
-  
+}
+
+export default FooterContent;

@@ -1,5 +1,6 @@
 import { Menu, Container, Image, Icon } from "semantic-ui-react";
 import Link from "next/link";
+import FooterContent from "./FooterContent"
 import Router, { useRouter } from 'next/router'
 import NProgress from 'nprogress';
 
@@ -23,67 +24,23 @@ function Footer({ user }) {
   }
 
   return (
-    <Menu stackable fluid id="menu" inverted >
-      <Container text>
+      
+    <Menu fluid id="footer" color="blue" shadowSize={2}>
+        <FooterContent />
+      <Container >
         <Link href="/">
           <Menu.Item footer active={isActive('/')}>
             <Image
               size="mini"
               src="/static/logo.svg"
               //in line style props style
-              style={{ marginRight: "1em" }}
+              style={{ marginRight: "1em", marginLeft: "10em" }}
             />
-            Alladin
+           
+           
           </Menu.Item>
         </Link>
 
-        <Link href="/cart">
-          <Menu.Item footer active={isActive('/cart')}>
-            <Icon name="cart" size="large" />
-            Cart
-          </Menu.Item>
-        </Link>
-
-        {isRootOrAdmin && (
-          <Link href="/create">
-            <Menu.Item footer active={isActive('/create')}>
-              <Icon name="add square" size="large" />
-              Create
-            </Menu.Item>
-          </Link>
-        )}
-
-        {user ? (
-          <>
-            <Link href="/account">
-              <Menu.Item footer active={isActive('/account')}>
-                <Icon name="user" size="large" />
-                Account
-              </Menu.Item>
-            </Link>
-
-            <Menu.Item >
-              <Icon name="sign out" size="large" />
-              Logout
-            </Menu.Item>
-          </>
-        ) : (
-          <>
-            <Link href="/login">
-              <Menu.Item footer active={isActive('/login')}>
-                <Icon name="sign in" size="large" />
-                Login
-              </Menu.Item>
-            </Link>
-
-            <Link href="/signup">
-              <Menu.Item footer active={isActive('/signup')}>
-                <Icon name="signup" size="large" />
-                Signup
-              </Menu.Item>
-            </Link>
-          </>
-        )}
       </Container>
     </Menu>
   );
