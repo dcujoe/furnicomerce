@@ -6,8 +6,8 @@ import ProductList from "../../components/Index/ProductList"
 
 
 export default function Layout ({ children, user }) {
-  return 
-  (
+
+  return (
   
   <Container>
       <Head>
@@ -27,7 +27,7 @@ export default function Layout ({ children, user }) {
       </Container>
   
     )
-   
-    }
+  }
+    
  
     

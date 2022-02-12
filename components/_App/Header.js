@@ -24,7 +24,7 @@ export default function Header({ user }) {
   }
 
   return (
-    <Menu stackable fluid id="menu" inverted>
+    <Menu stackable fluid id="menu" inverted >
       <Container text>
         <Link href="/">
           <Menu.Item header active={isActive('/')}>

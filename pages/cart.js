@@ -75,4 +75,4 @@ Cart.getInitialProps = async ctx => {
   return { products: response.data };
 };
 
-
+export default Cart;
