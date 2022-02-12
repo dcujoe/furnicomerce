@@ -7,7 +7,9 @@ import ProductList from "../../components/Index/ProductList"
 
 export default function Layout ({ children, user }) {
   return 
-  (<>
+  (
+  
+  <Container>
       <Head>
         <HeadContent />
         {/* Stylesheets */}
@@ -19,12 +21,13 @@ export default function Layout ({ children, user }) {
         />
         <title>Alladin</title>
       </Head>
+      <Container />
       <Header user={user} />
-      <Container text style={{ paddingTop: "1em" }}>
-        
-    {children}
-    </Container>
-    
-    </>
-    )}
+      {children}
+      </Container>
+  
+    )
+   
+    }
  
+    
