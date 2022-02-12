@@ -30,11 +30,22 @@ async function handleGetRequest(req, res) {
   const { mediaUrl } = req.body;
 
   try {
-      if (!mediaUrl) {
-        return res.status(422).send("Product missing try another time");
-      } catch (error) {
+    if (!mediaUrl) {
+       return res.status(500).send("Product is missing");
+    } 
+
+    const product = await new Product({ 
+        _id,
+        price, 
+        description, 
+        mediaUrl}).save()
+    res.status(201).json(product);
+
+} catch (error) {
     console.error(error);
     res.status(500).send("Server error in creating product");
+}
+
   
 }
 
