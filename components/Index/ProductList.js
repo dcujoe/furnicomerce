@@ -4,7 +4,7 @@ import { Card } from 'semantic-ui-react'
 
 function ProductList({ products }) {
   function mapProductsToItems(products) {
-    return products.map((product) => ({
+    return products.map(product => ({
       header: product.name,
       image: product.image,
       meta: `€${product.price}`,
@@ -18,8 +18,7 @@ function ProductList({ products }) {
   // items to be represented per row (CSS) and items should be centered
   return <Card.Group 
          stackable 
-         itemsPerRow="4" centered items=
-  {mapProductsToItems(products)} />
+         itemsPerRow="4" centered items={mapProductsToItems(products)} />
   
 }
 
