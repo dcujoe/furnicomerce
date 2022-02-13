@@ -1,26 +1,16 @@
-import { useAmp } from 'next/amp'
+import React, { Component, Fragment } from "react";
+import { } from 'semantic-ui-react'
 
-export const config = { amp: 'hybrid' }
-
-function Footer(props) {
-  const isAmp = useAmp()
-
-  return (
-    <div>
-      <h3>Footer Section</h3>
-      {isAmp ? (
-        <amp-img
-          width="300"
-          height="300"
-          src="./images/10.jpeg"
-          alt="a cool image"
-          layout="responsive"
-        />
-      ) : (
-        <img width="300" height="300" src="./images/img10.jpeg" alt="a cool image" />
-      )}
-    </div>
-  )
+class Footer extends Component {
+  render() {
+    return (
+      <div style={{ position: "absolute", bottom: 0, width:"100%" }} className="bg-gray-100">
+        <div className="bg-gray-100 container mx-auto px-6 pt-10 pb-6">
+          > © Daniel Cujoe. All rights reserved.
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Footer
+export default Footer;

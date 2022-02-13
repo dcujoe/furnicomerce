@@ -27,7 +27,7 @@ export default function Layout ({ children, user }) {
       <Header user={user} /> 
       
       {children}
-      <Footer user={user} />
+      <Footer />
       </Container>
       
     )
