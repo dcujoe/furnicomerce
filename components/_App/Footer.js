@@ -1,16 +1,90 @@
-import React, { Component, Fragment } from "react";
-import { } from 'semantic-ui-react'
+import { Menu, Container, Image, Icon } from "semantic-ui-react";
+import Link from "next/link";
+import Router, { useRouter } from 'next/router'
+import { handleLogout } from '../../utils/auth'
+import NProgress from 'nprogress';
 
-class Footer extends Component {
-  render() {
-    return (
-      <div style={{ position: "absolute", bottom: 0, width:"100%" }} className="bg-gray-100">
-        <div className="bg-gray-100 container mx-auto px-6 pt-10 pb-6">
-          > © Daniel Cujoe. All rights reserved.
-        </div>
-      </div>
-    );
+Router.onRouteChangeStart = () => NProgress.start();
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
+
+
+export default function Footer({ user }) {
+  const router = useRouter()
+
+  const isRoot = user && user.role === 'root';
+  const isAdmin = user && user.role === 'admin';
+  const isRootOrAdmin = isRoot || isAdmin;
+
+  
+  
+
+  function isActive(route) {
+    return route === router.pathname;
   }
-}
 
-export default Footer;
+  return (
+    <Container>
+    <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
+    <Menu stackable fluid id="menu" inverted width={200} height={200} className="footer">
+    
+      <Container text>
+        <Link href="/">
+          <Menu.Item header active={isActive('/')}>
+            <Image
+              size="mini"
+              src="/static/logo.svg"
+              //in line style props style
+              style={{ marginRight: "1em" }}
+            />
+            Alladin
+          </Menu.Item>
+        </Link>
+
+        <Link href="/cart">
+          <Menu.Item header active={isActive('/cart')}>
+            <Icon name="cart" size="large" />
+            Cart
+          </Menu.Item>
+        </Link>
+
+        {isRootOrAdmin && (
+          <Link href="/create">
+            <Menu.Item header active={isActive('/create')}>
+              <Icon name="add square" size="large" />
+              Create
+            </Menu.Item>
+          </Link>
+        )}
+
+        {user ? (
+          <>
+            <Link href="/account">
+              <Menu.Item header active={isActive('/account')}>
+                <Icon name="user" size="large" />
+                Account
+              </Menu.Item>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link href="/login">
+              <Menu.Item header active={isActive('/login')}>
+                <Icon name="sign in" size="large" />
+                Login
+              </Menu.Item>
+            </Link>
+
+            <Link href="/signup">
+              <Menu.Item header active={isActive('/signup')}>
+                <Icon name="signup" size="large" />
+                Signup
+              </Menu.Item>
+            </Link>
+          </>
+        )}
+      </Container>
+    </Menu>
+    </Container>
+  )
+}
