@@ -11,7 +11,7 @@ import cookie from 'js-cookie';
 function Cart({ products, user }) {
   const [cartProducts, setCartProducts] = React.useState(products);
   const [success, setSuccess] = React.useState(false);
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
 
   async function handleRemoveFromCart(productId) {
     const url = `${baseUrl}/api/cart`;
@@ -38,7 +38,7 @@ function Cart({ products, user }) {
     } catch (error) {
       catchErrors(error, window.alert);
     } finally {
-      setLoading(false);
+      setLoading(true);
      
     }
 

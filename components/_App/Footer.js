@@ -1,50 +1,26 @@
-import { Menu, Container, Image, Icon } from "semantic-ui-react";
-import Link from "next/link";
-import FooterContent from "./FooterContent"
-import Router, { useRouter } from 'next/router'
-import NProgress from 'nprogress';
+import { useAmp } from 'next/amp'
 
-Router.onRouteChangeStart = () => NProgress.start();
-Router.onRouteChangeComplete = () => NProgress.done();
-Router.onRouteChangeError = () => NProgress.done();
+export const config = { amp: 'hybrid' }
 
-
-function Footer({ user }) {
-  const router = useRouter();
-
-  const isRoot = user && user.role === 'root';
-  const isAdmin = user && user.role === 'admin';
-  const isRootOrAdmin = isRoot || isAdmin;
-
-  
-  
-
-  function isActive(route) {
-    return route === router.pathname;
-  }
+function Footer(props) {
+  const isAmp = useAmp()
 
   return (
-      
-    <Menu fluid id="footer" color="blue" shadowSize={2}>
-        <FooterContent />
-      <Container >
-        <Link href="/">
-          <Menu.Item footer active={isActive('/')}>
-            <Image
-              size="mini"
-              src="/static/logo.svg"
-              //in line style props style
-              style={{ marginRight: "1em", marginLeft: "10em" }}
-            />
-           
-           
-          </Menu.Item>
-        </Link>
-
-      </Container>
-    </Menu>
-  );
+    <div>
+      <h3>Footer Section</h3>
+      {isAmp ? (
+        <amp-img
+          width="300"
+          height="300"
+          src="./images/10.jpeg"
+          alt="a cool image"
+          layout="responsive"
+        />
+      ) : (
+        <img width="300" height="300" src="./images/img10.jpeg" alt="a cool image" />
+      )}
+    </div>
+  )
 }
 
-export default Footer;
-
+export default Footer

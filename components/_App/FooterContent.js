@@ -54,7 +54,7 @@ function FooterContent() {
       <meta name="msapplication-TileColor" content="#00df94" />
       <meta name="theme-color" content="#00df94" />
     </>
-  );
+  )
 }
 
-export default FooterContent;
+export default FooterContent

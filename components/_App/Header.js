@@ -87,6 +87,6 @@ export default function Header({ user }) {
         )}
       </Container>
     </Menu>
-  );
+  )
 }
 

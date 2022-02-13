@@ -29,7 +29,6 @@ export default function Layout ({ children, user }) {
       {children}
       <Footer user={user} />
       </Container>
-
       
     )
   }

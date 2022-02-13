@@ -17,17 +17,13 @@ const INITIAL_USER = {
 function Signup() {
   // setting the states
   const [user, setUser] = React.useState(INITIAL_USER);
-  const [disabled, setDisabled] = React.useState(true);
+  const [disabled, setDisabled] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState('');
 
 
   
  
-
-  
-
-
 
 
 
