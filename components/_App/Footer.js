@@ -4,6 +4,7 @@ import Router, { useRouter } from 'next/router'
 import { handleLogout } from '../../utils/auth'
 import NProgress from 'nprogress';
 
+
 Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
@@ -24,10 +25,8 @@ export default function Footer({ user }) {
   }
 
   return (
-    <Container>
-    <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
+    <Container className="footer">
     <Menu stackable fluid id="menu" inverted width={200} height={200} className="footer">
-    
       <Container text>
         <Link href="/">
           <Menu.Item header active={isActive('/')}>

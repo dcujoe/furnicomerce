@@ -5,6 +5,7 @@ import { redirectUser } from '../utils/auth'
 import baseUrl from '../utils/baseUrl'
 import axios from "axios";
 import { Router } from "next/router";
+import '../static/styles.css'
 
 
 
