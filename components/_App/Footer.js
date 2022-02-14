@@ -75,12 +75,7 @@ export default function Footer({ user }) {
               </Menu.Item>
             </Link>
 
-            <Link href="/signup">
-              <Menu.Item header active={isActive('/signup')}>
-                <Icon name="signup" size="large" />
-                Signup
-              </Menu.Item>
-            </Link>
+          
           </>
         )}
       </Container>
