@@ -3,6 +3,7 @@ import { Container } from "semantic-ui-react";
 import Footer from "./Footer"
 import Pagination from "./Pagination"
 import Header from "./Header";
+import Information from "./Information"
 import HeadContent from "./HeadContent";
 import ProductList from "../../components/Index/ProductList"
 import Product from "../../pages/product";
@@ -29,6 +30,7 @@ export default function Layout ({ children, user }) {
       <Header user={user} /> 
       <Pagination />
       {children}
+      <Information />
       <Footer />
       </Container>
       

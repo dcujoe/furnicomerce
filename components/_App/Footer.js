@@ -27,7 +27,7 @@ export default function Footer({ user }) {
   return (
     <Container className="footer">
     <Menu stackable fluid id="menu" inverted width={200} height={200} className="footer">
-      <Container>
+      <Container stackable fluid>
         <Link href="/" header active={isActive('/')}>
            
             Alladin
