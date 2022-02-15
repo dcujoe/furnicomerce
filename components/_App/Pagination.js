@@ -1,8 +1,10 @@
-import { Menu, Container, Image, Icon } from "semantic-ui-react";
+import { Segment, Container, Header, Icon } from "semantic-ui-react";
 import Link from "next/link";
 import Router, { useRouter } from 'next/router'
 import { handleLogout } from '../../utils/auth'
 import NProgress from 'nprogress';
+import ImageCarousel from './ImageCarousel'
+import "pure-react-carousel/dist/react-carousel.es.css";
 
 
 Router.onRouteChangeStart = () => NProgress.start();
@@ -26,20 +28,15 @@ export default function Pagination({ user }) {
 
   return (
     <Container className="pagination-top">
-    <Menu stackable fluid id="menu" inverted width={200} height={200} className="footer">
-      <Container>
-        <Link href="/" header active={isActive('/')}>
-          
-           
-            Alladin
-          
-        </Link>
-
-     
-
-        
-      </Container>
-    </Menu>
+    <Segment attached="top">
+        <Header as="h2" content="Image carousel" />
+        <p>
+          Carousel
+        </p>
+      </Segment>
+      <Segment attached="bottom">
+        <ImageCarousel />
+      </Segment>
     </Container>
   )
 }
