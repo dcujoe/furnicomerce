@@ -27,10 +27,8 @@ body {
     height: 300px;
 }
 
-.pagination-top {
-    position: relative;
-    height: 600px;
-    margin-bottom: 5px;
+.carousel {
+    margin-bottom: 10px;
 }
 
 .information {

@@ -1,9 +1,8 @@
-import { Segment, Container, Header, Icon } from "semantic-ui-react";
+import { Segment, Container } from "semantic-ui-react";
 import Link from "next/link";
 import Router, { useRouter } from 'next/router'
-import { handleLogout } from '../../utils/auth'
 import NProgress from 'nprogress';
-import ImageCarousel from './ImageCarousel'
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 
@@ -26,17 +25,25 @@ export default function Pagination({ user }) {
     return route === router.pathname;
   }
 
-  return (
-    <Container className="pagination-top">
-    <Segment attached="top">
-        <Header as="h2" content="Image carousel" />
-        <p>
-          Carousel
-        </p>
-      </Segment>
-      <Segment attached="bottom">
-        <ImageCarousel />
-      </Segment>
-    </Container>
-  )
+  
+    return (
+        <Container className="carousel">
+      <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={40}
+        totalSlides={4}
+        className="carousel"
+      >
+        <Slider>
+          <Slide index={1}>I am the first Slide.</Slide>
+          <Slide index={2}>I am the second Slide.</Slide>
+          <Slide index={3}>I am the third Slide.</Slide>
+          <Slide index={3}>I am the third Slide.</Slide>
+        </Slider>
+        <ButtonBack>Back</ButtonBack>
+        <ButtonNext>Next</ButtonNext>
+      </CarouselProvider>
+      </Container>
+    );
+  
 }
