@@ -27,56 +27,36 @@ export default function Footer({ user }) {
   return (
     <Container className="footer">
     <Menu stackable fluid id="menu" inverted width={200} height={200} className="footer">
-      <Container text>
-        <Link href="/">
-          <Menu.Item header active={isActive('/')}>
-            <Image
-              size="mini"
-              src="/static/logo.svg"
-              //in line style props style
-              style={{ marginRight: "1em" }}
-            />
+      <Container>
+        <Link href="/" header active={isActive('/')}>
+           
             Alladin
-          </Menu.Item>
-        </Link>
-
-        <Link href="/cart">
-          <Menu.Item header active={isActive('/cart')}>
-            <Icon name="cart" size="large" />
-            Cart
-          </Menu.Item>
-        </Link>
-
-        {isRootOrAdmin && (
-          <Link href="/create">
-            <Menu.Item header active={isActive('/create')}>
-              <Icon name="add square" size="large" />
-              Create
-            </Menu.Item>
-          </Link>
-        )}
-
-        {user ? (
-          <>
-            <Link href="/account">
-              <Menu.Item header active={isActive('/account')}>
-                <Icon name="user" size="large" />
-                Account
-              </Menu.Item>
-            </Link>
-          </>
-        ) : (
-          <>
-            <Link href="/login">
-              <Menu.Item header active={isActive('/login')}>
-                <Icon name="sign in" size="large" />
-                Login
-              </Menu.Item>
-            </Link>
-
           
-          </>
-        )}
+        </Link>
+        <Link href="/" header active={isActive('/')}>
+           
+           Alladin
+         
+       </Link>
+       <Link href="/" header active={isActive('/')}>
+           
+           Alladin
+         
+       </Link>
+       <Link href="/" header active={isActive('/')}>
+           
+           Alladin
+         
+       </Link>
+       <Link href="/" header active={isActive('/')}>
+           
+           Alladin
+         
+       </Link>
+
+     
+
+        
       </Container>
     </Menu>
     </Container>
