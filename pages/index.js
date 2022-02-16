@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios"
+import Pagination from "../components/_App/Pagination"
 import ProductPagination from "../components/Index/ProductPagination"
 import ProductList from '../components/Index/ProductList'
 import baseUrl from '../utils/baseUrl'
@@ -12,6 +13,7 @@ function Home({ products, totalPages }) {
  
   return (
     <>
+    <Pagination />
   <ProductList products={products} />
   <ProductPagination totalPages={totalPages} />);
   </>

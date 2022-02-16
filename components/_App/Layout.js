@@ -28,7 +28,6 @@ export default function Layout ({ children, user }) {
       </Head>
       <Container />
       <Header user={user} /> 
-      <Pagination />
       {children}
       <Information />
       <Footer />

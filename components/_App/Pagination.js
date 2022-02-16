@@ -40,8 +40,10 @@ export default function Pagination({ user }) {
           <Slide index={3}>I am the third Slide.</Slide>
           <Slide index={3}>I am the third Slide.</Slide>
         </Slider>
-        <ButtonBack>Back</ButtonBack>
+        <Container className="buttonclick">
+        <ButtonBack >Back</ButtonBack>
         <ButtonNext>Next</ButtonNext>
+        </Container>
       </CarouselProvider>
       </Container>
     );
