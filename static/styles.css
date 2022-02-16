@@ -17,13 +17,14 @@ body {
 
 .ui.styled.accordion .content {
     margin: 0;
-    padding: 0.5em 1em 0.75em !important;
+    padding: 0 0 0 0 !important;
 }
 
 .footer {
     position: relative;
     margin-bottom: 0;
-    margin: 0 0;
+    margin-left: -25px;
+    margin-right: -25px;
     height: 300px;
 }
 
