@@ -35,7 +35,7 @@ export default function Pagination({ user }) {
         className="carousel"
       >
         <Slider>
-          <Slide index={1}>I am the first Slide.</Slide>
+          <Slide index={1}>I am the first slide</Slide>
           <Slide index={2}>I am the second Slide.</Slide>
           <Slide index={3}>I am the third Slide.</Slide>
           <Slide index={3}>I am the third Slide.</Slide>
