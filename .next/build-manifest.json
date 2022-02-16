@@ -44,10 +44,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/next/dist/pages/_error.js"
     ],
-    "/product": [
+    "/register": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/product.js"
+      "static/chunks/pages/register.js"
     ],
     "/signup": [
       "static/chunks/webpack.js",

@@ -2,7 +2,7 @@ import { Segment, Container, Image } from "semantic-ui-react";
 import Link from "next/link";
 import Router, { useRouter } from 'next/router'
 import NProgress from 'nprogress';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, ButtonPlay } from 'pure-react-carousel';
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 
@@ -32,6 +32,8 @@ export default function Pagination({ user }) {
         naturalSlideWidth={100}
         naturalSlideHeight={40}
         totalSlides={4}
+        interval={5}
+        intervalDuration={4}
         className="carousel"
       >
         <Slider>
@@ -62,10 +64,12 @@ export default function Pagination({ user }) {
               style={{ marginRight: "1em" }}
             />I am the third Slide.</Slide>
         </Slider>
+        <ButtonPlay />
         <Container className="buttonclick">
         <ButtonBack >Back</ButtonBack>
         <ButtonNext>Next</ButtonNext>
         </Container>
+        <ButtonPlay />
       </CarouselProvider>
       </Container>
     );

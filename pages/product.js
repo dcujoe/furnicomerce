@@ -8,8 +8,10 @@ function Product({ product, user }) {
 
   return (
       <>
+      <Container style={{ marginRight: '2', marginLeft: '2' }}>
       <ProductSummary user={user} {...product} />
       <ProductAttributes user={user} {...product} />
+      </Container>
       </>
     );
 }

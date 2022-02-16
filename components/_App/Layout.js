@@ -14,7 +14,7 @@ export default function Layout ({ children, user }) {
 
   return (
   
-  <Container>
+  <Container style={{ padding: '0 0', width: '100%'}} vertical>
       <Head>
         <HeadContent />
         {/* Stylesheets */}
