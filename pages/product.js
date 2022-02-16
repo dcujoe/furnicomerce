@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Container } from 'semantic-ui-react'
 import ProductSummary from '../components/Product/ProductSummary'
 import ProductAttributes from '../components/Product/ProductAttributes'
 import baseUrl from '../utils/baseUrl'
@@ -8,7 +9,7 @@ function Product({ product, user }) {
 
   return (
       <>
-      <Container style={{ marginRight: '2', marginLeft: '2' }}>
+      <Container style={{ marginRight:'2', marginLeft:'2' }}>
       <ProductSummary user={user} {...product} />
       <ProductAttributes user={user} {...product} />
       </Container>

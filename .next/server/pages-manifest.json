@@ -2,11 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/products": "pages/api/products.js",
-  "/register": "pages/register.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
-  "/cart": "pages/cart.js",
-  "/login": "pages/login.js",
-  "/signup": "pages/signup.js",
+  "/product": "pages/product.js",
   "/": "pages/index.js"
 }
