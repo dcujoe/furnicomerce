@@ -3,6 +3,9 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
-  "/api/products": "pages/api/products.js"
+  "/signup": "pages/signup.js",
+  "/api/products": "pages/api/products.js",
+  "/login": "pages/login.js",
+  "/cart": "pages/cart.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }
