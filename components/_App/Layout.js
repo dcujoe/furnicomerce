@@ -26,7 +26,7 @@ export default function Layout ({ children, user }) {
         />
         <title>Alladin</title>
       </Head>
-      <Container />
+      <Container style={{ padding: '2px', width: '100%'}}/>
       <Header user={user} /> 
       {children}
       <Information />

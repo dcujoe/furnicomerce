@@ -14,7 +14,7 @@ function Home({ products, totalPages }) {
   return (
     <>
     <Pagination />
-  <ProductList products={products} />
+  <ProductList products={products} className="product-list" />
   <ProductPagination totalPages={totalPages} />);
   </>
   )
