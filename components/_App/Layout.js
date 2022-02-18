@@ -14,7 +14,7 @@ export default function Layout ({ children, user }) {
 
   return (
   
-  <Container style={{ padding: '0 0', width: '100%'}} vertical>
+  <Container style={{ padding: '0', width: '100%'}} vertical>
       <Head>
         <HeadContent />
         {/* Stylesheets */}
@@ -26,7 +26,7 @@ export default function Layout ({ children, user }) {
         />
         <title>Alladin</title>
       </Head>
-      <Container style={{ padding: '2px', width: '100%'}}/>
+      <Container />
       <Header user={user} /> 
       {children}
       <Information />

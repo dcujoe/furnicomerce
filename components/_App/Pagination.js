@@ -27,7 +27,7 @@ export default function Pagination({ user }) {
 
   
     return (
-        <Container className="carousel">
+        <Container className="carousel" style={{ marginRight: "0", marginLeft: "0", width: "100%" }}>
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={40}

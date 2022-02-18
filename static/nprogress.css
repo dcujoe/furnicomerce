@@ -63,8 +63,6 @@
     position: absolute;
 }
 
-
-
 @-webkit-keyframes nprogress-spinner {
     0% {
         -webkit-transform: rotate(0deg);

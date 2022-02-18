@@ -29,7 +29,7 @@ body {
 }
 
 .carousel {
-    margin-bottom: 50px;
+    margin-bottom: 5px;
 }
 
 .information {
@@ -39,7 +39,7 @@ body {
 
 .buttonclick {
     text-align: center;
-    margin-top: 3px
+    margin-top: 0;
 }
 
 .space {

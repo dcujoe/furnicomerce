@@ -23,7 +23,7 @@ function ProductList({ products }) {
   itemsPerRow="4" 
   centered 
   items={mapProductsToItems(products)} 
-  style={{ marginRight: "0.2px", marginLeft: "0.2px" }}/>
+  style={{ marginRight: "2px", marginLeft: "2px" }}/>
   
   
   )
