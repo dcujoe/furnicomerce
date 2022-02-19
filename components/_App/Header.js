@@ -32,7 +32,7 @@ export default function Header({ user }) {
              // size="mini"
              // src="/static/logo.svg"
               //in line style props style
-              style={{ marginRight: "0" }}
+             
             />
             Alladin
           </Menu.Item>
