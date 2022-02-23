@@ -6,6 +6,7 @@ import Header from "./Header";
 import HeadContent from "./HeadContent";
 import ProductList from "../../components/Index/ProductList"
 import Product from "../../pages/product";
+import Newrow from "./Newrow"
 
 
 
@@ -28,7 +29,7 @@ export default function Layout ({ children, user }) {
       <Container />
       <Header user={user} /> 
       {children}
-      
+      <Newrow />
       <Footer />
       </Container>
       
