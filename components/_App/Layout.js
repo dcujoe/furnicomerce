@@ -7,6 +7,7 @@ import HeadContent from "./HeadContent";
 import ProductList from "../../components/Index/ProductList"
 import Product from "../../pages/product";
 import Newrow from "./Newrow"
+import Newcontainer from "./Newcontainer"
 
 
 
@@ -14,7 +15,7 @@ export default function Layout ({ children, user }) {
 
   return (
   
-  <Container style={{ padding: '0', width: '100%'}} vertical>
+  <Container style={{ width: '100%'}} vertical>
       <Head>
         <HeadContent />
         {/* Stylesheets */}
@@ -30,6 +31,8 @@ export default function Layout ({ children, user }) {
       <Header user={user} /> 
       {children}
       <Newrow />
+
+      <Newcontainer />
       <Footer />
       </Container>
       

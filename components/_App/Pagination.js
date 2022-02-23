@@ -35,6 +35,7 @@ export default function Pagination({ user }) {
         interval={5}
         intervalDuration={4}
         className="carousel"
+        style={{ marginRight: "0", marginLeft: "0" }}
       >
         <Slider>
           <Slide index={1}><Image

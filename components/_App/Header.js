@@ -98,7 +98,7 @@ export default function Header({ user }) {
      
     
 
-    <Menu.Item position='right'>
+    <Menu.Item fluid id="menu" position='right'>
       <Input
         action={{ type: 'submit', content: 'Go' }}
         placeholder='Navigate to...'
