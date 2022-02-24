@@ -3,6 +3,7 @@ import Link from "next/link";
 import Router, { useRouter } from 'next/router'
 import { handleLogout } from '../../utils/auth'
 import NProgress from 'nprogress';
+import Dropdownmenu from "./Dropdownmenu"
 
 Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
@@ -23,8 +24,13 @@ export default function Header({ user }) {
     return route === router.pathname;
   }
 
+
+ 
+
+  
+
   return (
-    <Menu fluid id="menu" inverted borderless>
+    <Menu fluid id="menu" inverted style={{ marginTop: "200px", borderRadius: "0" }} >
       <Container text>
         <Link href="/">
           <Menu.Item header active={isActive('/')}>
@@ -44,6 +50,7 @@ export default function Header({ user }) {
             Cart
           </Menu.Item>
         </Link>
+        <Dropdownmenu />
 
 
         {isRootOrAdmin && (

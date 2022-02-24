@@ -40,19 +40,19 @@ export default function Pagination({ user }) {
         <Slider>
           <Slide index={1}><Image
               size="150"
-              src="/static/images/img111.png"
+              //src="/static/images/img111.png"
               //in line style props style
               style={{ marginRight: "1em" }}
             />I am the first slide</Slide>
           <Slide index={2}><Image
               size="150"
-              src="/static/images/img112.png"
+             // src="/static/images/img112.png"
               //in line style props style
               style={{ marginRight: "1em" }}
             />I am the second Slide.</Slide>
           <Slide index={3}><Image
               size="150"
-              src="/static/images/img113.png"
+             // src="/static/images/img113.png"
               //in line style props style
               style={{ marginRight: "1em" }}
             />
@@ -60,13 +60,13 @@ export default function Pagination({ user }) {
           <Slide index={3}>
           <Image
               size="150"
-              src="/static/images/img114.png"
+              //src="/static/images/img114.png"
               //in line style props style
               style={{ marginRight: "1em" }}
             />I am the third Slide.</Slide>
         </Slider>
         <ButtonPlay />
-        <Container className="buttonclick">
+        <Container className="buttonclick" style={{ marginLeft: "50%" }}>
         <ButtonBack >Back</ButtonBack>
         <ButtonNext>Next</ButtonNext>
         </Container>
