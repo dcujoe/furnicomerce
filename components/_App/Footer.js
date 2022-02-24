@@ -10,12 +10,7 @@ const Footer = () => (
       <Segment stackable>
         <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
       </Segment>
-      <Segment stackable>
-        <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-      </Segment>
-      <Segment stackable>
-        <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-      </Segment>
+      
     </Grid.Row>
   </Grid>
 )
