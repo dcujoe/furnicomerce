@@ -35,9 +35,9 @@ export default function Header({ user }) {
         <Link href="/">
           <Menu.Item header active={isActive('/')}>
             <Image
-             // size="mini"
-             // src="/static/logo.svg"
-              //in line style props style
+            size="mini"
+           src="/static/logo.svg"
+             //in line style props style
              
             />
             Alladin
