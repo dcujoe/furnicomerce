@@ -36,7 +36,7 @@ export default function Header({ user }) {
           <Menu.Item header active={isActive('/')}>
             <Image
             //size="mini"
-           src="/static/logo.svg"
+           //src="/static/logo.svg"
              //in line style props style
              
             />
