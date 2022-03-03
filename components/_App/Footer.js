@@ -26,7 +26,7 @@ const Footer = () => (
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
-              <Header as='h4' inverted>
+              <Header as='h3' inverted>
                 Footer Header
               </Header>
               <p>
